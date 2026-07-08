@@ -6,20 +6,27 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: '哈迪斯 II',
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/thebestxt/hades2-wiki' }],
+			// 为此网站设置英语为默认语言。
+			locales: {
+				// 简体中文文档在 `src/content/docs/zh-cn/` 中。
+				root: {
+					label: '简体中文',
+					lang: 'zh-CN',
+				},
+			},
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: 'Intro',
+					slug: 'intro'
 				},
 				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
-				},
+					label: 'Characters',
+					items: [
+						{ label: 'Melinoe', slug: 'characters/melinoe' }
+					]
+				}
 			],
 		}),
 	],

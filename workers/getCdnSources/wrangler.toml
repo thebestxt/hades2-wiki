@@ -1,0 +1,11 @@
+name = "r2-sources-resolver"
+main = "index.js"
+compatibility_date = "2026-07-08"
+
+[vars]
+# 🌟 【核心】在这里填入你在 R2 桶里绑定的自定义公网访问外链域名（结尾别加斜杠）
+CDN_DOMAIN = "https://hadesii-sources.thebeeeestxt.cc"
+
+[[r2_buckets]]
+binding = "hadesii-sources"
+bucket_name = "hadesii-sources"
