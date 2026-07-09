@@ -24,3 +24,4 @@ pnpm-debug.log*
 .DS_Store
 syncR2.sh
 workers/**/.wrangler*
+public/r2Sources
