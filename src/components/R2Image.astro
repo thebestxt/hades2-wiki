@@ -1,6 +1,19 @@
 ---
+// R2Image.astro
 import globalConfig from '../../configs/globalConfigs.mjs'
+
 const { src = "", ...attrs } = Astro.props
+
+// 🌟 核心：清理 src 开头的斜杠，防止拼接出双斜杠
+const cleanSrc = src.startsWith('/') ? src.slice(1) : src;
+
+// 🌟 核心魔法：判断是否为开发环境 (npm run dev)
+// 如果是开发环境，走本地 public/r2Sources 软链接路径
+// 如果是生产环境 (build 线上环境)，依然走你原来的远程 CDN 域名
+const isDev = import.meta.env.DEV;
+const finalSrc = isDev 
+  ? `/r2Sources/${cleanSrc}` 
+  : `${globalConfig.hadesSourceHost}${cleanSrc}`;
 ---
 
-<img src={`${globalConfig.hadesSourceHost}${src}`} alt="" {...attrs}>
+<img src={finalSrc} alt="" {...attrs}>

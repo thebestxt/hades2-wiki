@@ -11,7 +11,9 @@ import markdownConf from './configs/markdown.mjs'
 export default defineConfig({
     integrations: [
 		// @ts-ignore
-		starlight(starLightConf),
+		starlight({
+			...starLightConf,
+		}),
 		vue(),
 		mdx(),
 	],
