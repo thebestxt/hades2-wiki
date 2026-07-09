@@ -24,3 +24,9 @@ pnpm-debug.log*
 .DS_Store
 syncR2.sh
 workers/**/.wrangler*
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example

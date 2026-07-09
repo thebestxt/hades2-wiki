@@ -7,14 +7,19 @@ import mdx from '@astrojs/mdx';
 import starLightConf from './configs/starlight.mjs'
 import markdownConf from './configs/markdown.mjs'
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
-    integrations: [
-		// @ts-ignore
-		starlight(starLightConf),
-		vue(),
-		mdx(),
+  integrations: [
+      // @ts-ignore
+      starlight(starLightConf),
+      vue(),
+      mdx(),
 	],
-	// @ts-ignore
-	markdown: markdownConf
+
+  // @ts-ignore
+  markdown: markdownConf,
+
+  adapter: cloudflare()
 });
