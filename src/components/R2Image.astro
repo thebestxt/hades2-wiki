@@ -13,7 +13,7 @@ const cleanSrc = src.startsWith('/') ? src.slice(1) : src;
 const isDev = import.meta.env.DEV;
 const finalSrc = isDev 
   ? `/r2Sources/${cleanSrc}` 
-  : `${globalConfig.hadesSourceHost}${cleanSrc}`;
+  : `${globalConfig.hadesSourceHost}/${cleanSrc}`;
 ---
 
 <img src={finalSrc} alt="" {...attrs}>
