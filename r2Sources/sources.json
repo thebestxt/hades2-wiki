@@ -1,3 +1,6 @@
 {
-    "homepageBanner": "homepageBanner.png"
+    "homepageBanner": "homepageBanner.png",
+    "melinoeIcon": "melinoe_icon.png",
+    "hecateIcon": "hecate_icon.png",
+    "darkBook": "dark_book.png"
 }

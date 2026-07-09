@@ -1,0 +1,6 @@
+---
+import globalConfig from '../../configs/globalConfigs.mjs'
+const { src = "", ...attrs } = Astro.props
+---
+
+<img src={`${globalConfig.hadesSourceHost}${src}`} alt="" {...attrs}>

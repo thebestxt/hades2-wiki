@@ -1,0 +1,155 @@
+---
+// src/components/CustomSidebar.astro
+
+
+// 1. 直接拿到 Starlight 传给侧边栏的全量树状数据
+const { sidebar } = Astro.locals.starlightRoute;
+---
+
+<div class="custom-sidebar-wrapper">
+  <ul class="sidebar-entries">
+    {
+      sidebar.map((entry) => {
+        // ---------- 🌲 第一层是普通的叶子链接 ----------
+        if (entry.type === 'link') {
+          const imgIconSrc = entry.attrs?.['data-icon'];
+          return (
+            <li class="sidebar-leaf">
+              <a href={entry.href} aria-current={entry.isCurrent ? 'page' : undefined} class={entry.isCurrent ? 'current' : ''} {...entry.attrs}>
+                {imgIconSrc && <img src={imgIconSrc} class="sidebar-custom-img-icon" alt="" />}
+                <span>{entry.label}</span>
+                {entry.badge && <span class={`custom-badge ${entry.badge.variant}`}>{entry.badge.text}</span>}
+              </a>
+            </li>
+          );
+        }
+
+        // ---------- 📂 第一层是分组折叠菜单 (Group) ----------
+        if (entry.type === 'group') {
+          return (
+            <li class="sidebar-group">
+              <details open={!entry.collapsed}>
+                <summary>
+                  <span class="group-heading">{entry.label}</span>
+                  {/* <Icon name="chevron-down" class="caret" size="1.25rem" /> */}
+                </summary>
+                
+                {/* 渲染第二层的子链接 */}
+                <ul class="sidebar-sub-entries">
+                  {entry.entries.map((subEntry) => {
+                    if (subEntry.type === 'link') {
+                      const subImgSrc = subEntry.attrs?.['data-icon'];
+                      return (
+                        <li>
+                          <a href={subEntry.href} aria-current={subEntry.isCurrent ? 'page' : undefined} class={[subEntry.isCurrent ? 'current' : '', 'lv2-sidebar', subImgSrc ? 'with-image' : ''].join(' ')} {...subEntry.attrs}>
+                            {subImgSrc && <img src={subImgSrc} class="sidebar-custom-img-icon" alt="" />}
+                            <span>{subEntry.label}</span>
+                            {subEntry.badge && <span class={`custom-badge ${subEntry.badge.variant}`}>{subEntry.badge.text}</span>}
+                          </a>
+                        </li>
+                      );
+                    }
+                    return null;
+                  })}
+                </ul>
+              </details>
+            </li>
+          );
+        }
+        return null;
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  /* 基础列表复位 */
+  .custom-sidebar-wrapper ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* 每一项布局 */
+  .custom-sidebar-wrapper li {
+    margin-top: 0.35rem;
+  }
+  
+  .custom-sidebar-wrapper a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem; /* 图片图标与右侧文字的间距 */
+    text-decoration: none;
+    color: var(--sl-color-gray-3);
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.25rem;
+    font-size: var(--sl-text-base);
+    transition: background-color 0.15s ease;
+  }
+  
+  .custom-sidebar-wrapper a:hover {
+    background-color: var(--sl-color-gray-5);
+    color: var(--sl-color-white);
+  }
+  
+  /* 当前高亮页面样式 */
+  .custom-sidebar-wrapper a.current {
+    color: var(--sl-color-text-invert);
+    background-color: var(--sl-color-text-accent);
+    font-weight: 600;
+  }
+  .custom-sidebar-wrapper a.current.with-image {
+    height: 66px;
+  }
+  
+  /* 🌟 核心：图片图标的大小控制 */
+  .sidebar-custom-img-icon {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* 分组（Group）菜单样式 */
+  .sidebar-group {
+    margin-top: 1.25rem !important;
+  }
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .group-heading {
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    color: var(--sl-color-white);
+    letter-spacing: 0.05em;
+  }
+  .caret {
+    color: var(--sl-color-gray-3);
+    transition: transform 0.2s ease;
+  }
+  details[open] summary .caret {
+    transform: rotateZ(-180deg);
+  }
+  .sidebar-sub-entries {
+    padding-left: 0.75rem !important; /* 子菜单往右缩进 */
+    border-left: 1px solid var(--sl-color-gray-5);
+    margin-left: 0.6rem !important;
+    margin-top: 0.25rem !important;
+  }
+
+  /* 徽章样式（兜底方案一逻辑） */
+  .custom-badge {
+    padding: 0.15rem 0.4rem;
+    font-size: var(--sl-text-xs);
+    border-radius: 0.25rem;
+    line-height: 1;
+    margin-left: auto;
+  }
+  .custom-badge.note { background-color: var(--sl-color-accent-low); color: var(--sl-color-accent-high); border: 1px solid var(--sl-color-accent); }
+  .custom-badge.success { background-color: var(--sl-color-green-low); color: var(--sl-color-green-high); border: 1px solid var(--sl-color-green); }
+</style>
