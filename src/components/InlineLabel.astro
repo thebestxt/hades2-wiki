@@ -22,10 +22,15 @@ const keyMap = {
     wool: { label: '羊毛', icon: '/reagens/Wool.webp', },
     iron: { label: '铁矿', icon: '/reagens/Iron.webp', },
     feather: { label: '羽毛', icon: '/reagens/Feather.webp', },
+    cinder: { label: '余烬', icon: '/reagens/Cinder.webp', },
+    bronze: { label: '青铜', icon: '/reagens/Bronze.webp', },
+    shadow: { label: '暗影', icon: '/reagens/Shadow.webp', },
 
     // 植物
     lotus: { label: '莲花', icon: '/plants/Lotus.webp', },
     shaderot: { label: '糜影草', icon: '/plants/Shaderot.webp', },
+    driftwood: { label: '浮木', icon: '/plants/Driftwood.webp', },
+    goldenApple: { label: '金苹果', icon: '/plants/Golden_Apple.webp', },
 
     // 祝福
     premiumService: { label: '尊享服务', icon: '/boons/Premium_Service.webp', },
@@ -39,7 +44,7 @@ const keyMap = {
 
 const getMapItem = () => {
     if (!!key && Object.keys(keyMap).includes(key)) {
-        return keyMap[key as keyof typeof keyMap]
+        return keyMap[key]
     } else {
         return null
     }

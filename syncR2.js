@@ -1,14 +1,13 @@
-import { S3Client, HeadObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, ListObjectsV2Command, PutObjectCommand, DeleteObjectsCommand } from "@aws-sdk/client-s3";
 import fs from "node:fs";
 import path from "node:path";
-import crypto from "node:crypto"; // 🌟 引入内置加密模块，计算 MD5
+import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 
-// 兼容 ESM 的 __dirname 写法
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 1. 🌟 升级：支持从命令行或环境变量(Cloudflare Pages 专用)中解析 R2 配置
+// 1. 解析 R2 配置
 const args = {};
 process.argv.slice(2).forEach(arg => {
     if (arg.startsWith('--')) {
@@ -17,21 +16,17 @@ process.argv.slice(2).forEach(arg => {
     }
 });
 
-// 优先读取系统环境变量，如果不存在再降级读取本地命令行传参
 const accountId = process.env.R2_ACCOUNT_ID || args.accountId;
 const accessKeyId = process.env.R2_ACCESS_KEY_ID || args.accessKeyId;
 const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY || args.secretAccessKey;
 const bucket = process.env.R2_BUCKET_NAME || args.bucket;
 
-// 参数强校验
 if (!accountId || !accessKeyId || !secretAccessKey || !bucket) {
     console.error("❌ 错误: 缺少必要的 R2 配置参数！");
-    console.error("💡 本地运行示例: pnpm run sync-r2 -- --accountId=xxx --accessKeyId=xxx --secretAccessKey=xxx --bucket=xxx");
-    console.error("💡 云端部署提示: 请确保在 Cloudflare Pages 的 Environment variables 中配置了对应的变量。");
     process.exit(1);
 }
 
-// 2. 初始化 Cloudflare R2 客户端
+// 2. 初始化客户端
 const r2Client = new S3Client({
     region: "auto",
     endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
@@ -40,32 +35,19 @@ const r2Client = new S3Client({
 
 const SRC_DIR = path.join(__dirname, "r2Sources");
 
-// 根据后缀获取常用的 Mime-Type
 function getContentType(filePath) {
     const ext = path.extname(filePath).toLowerCase();
     const map = {
-        '.html': 'text/html',
-        '.css': 'text/css',
-        '.js': 'text/javascript',
-        '.json': 'application/json',
-        '.png': 'image/png',
-        '.jpg': 'image/jpeg',
-        '.jpeg': 'image/jpeg',
-        '.gif': 'image/gif',
-        '.svg': 'image/svg+xml',
-        '.mp3': 'audio/mpeg',
-        '.mp4': 'video/mp4',
-        '.webm': 'video/webm',
-        '.webp': 'image/webp'
+        '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json',
+        '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif',
+        '.svg': 'image/svg+xml', '.mp3': 'audio/mpeg', '.mp4': 'video/mp4', '.webm': 'video/webm', '.webp': 'image/webp'
     };
     return map[ext] || 'application/octet-stream';
 }
 
-// 深度遍历本地目录获取所有文件
 function getAllFiles(dirPath, arrayOfFiles = []) {
     if (!fs.existsSync(dirPath)) return arrayOfFiles;
     const files = fs.readdirSync(dirPath);
-
     files.forEach((file) => {
         const fullPath = path.join(dirPath, file);
         if (fs.statSync(fullPath).isDirectory()) {
@@ -74,33 +56,43 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
             arrayOfFiles.push(fullPath);
         }
     });
-
     return arrayOfFiles;
 }
 
-/**
- * 🌟 新增：计算本地文件的 MD5 值
- */
 function calculateLocalMD5(fileBuffer) {
     return crypto.createHash('md5').update(fileBuffer).digest('hex');
 }
 
 /**
- * 🌟 改造：获取远程文件的元数据（用来拿云端 ETag 做 MD5 对比）
- * @returns {Promise<{exists: boolean, etag: string}>}
+ * 🌟 核心升级 1：全量拉取远程存储桶的所有资产明细（支持分页处理，一网打尽）
  */
-async function getRemoteFileMetadata(key) {
-    try {
-        const result = await r2Client.send(new HeadObjectCommand({ Bucket: bucket, Key: key }));
-        // R2 返回的 ETag 自带双引号（如 '"a5ef8..."'），用正则剔除掉，方便对比
-        const etag = result.ETag ? result.ETag.replace(/"/g, '') : '';
-        return { exists: true, etag };
-    } catch (error) {
-        if (error.name === "NotFound" || error.$metadata?.status === 404) {
-            return { exists: false, etag: '' };
+async function fetchAllRemoteObjects() {
+    const remoteMap = new Map(); // key -> etag
+    let isTruncated = true;
+    let continuationToken = undefined;
+
+    console.log("📡 正在全量拉取远程云端资产明细...");
+    
+    while (isTruncated) {
+        const response = await r2Client.send(new ListObjectsV2Command({
+            Bucket: bucket,
+            ContinuationToken: continuationToken
+        }));
+
+        if (response.Contents) {
+            for (const obj of response.Contents) {
+                // R2 的 ETag 自带双引号，切掉
+                const etag = obj.ETag ? obj.ETag.replace(/"/g, '') : '';
+                remoteMap.set(obj.Key, etag);
+            }
         }
-        throw error;
+        
+        isTruncated = response.IsTruncated;
+        continuationToken = response.NextContinuationToken;
     }
+    
+    console.log(`📦 云端拉取完毕！共计找到远程文件 ${remoteMap.size} 个。`);
+    return remoteMap;
 }
 
 // 主逻辑
@@ -113,80 +105,113 @@ async function main() {
         return;
     }
 
-    console.log(`📦 找到本地文件 ${localFiles.length} 个，开始与远程 R2 存储桶 [${bucket}] 比对...`);
+    // 🌟 一口气抓回所有云端列表
+    let remoteMap;
+    try {
+        remoteMap = await fetchAllRemoteObjects();
+    } catch (err) {
+        console.error("❌ 抓取云端资产明细失败:", err.message);
+        return;
+    }
+
+    console.log(`⚡ 开始在本地内存中进行高速资产对齐...`);
     
     let uploadedCount = 0;
     let skippedCount = 0;
     let forcedUpdateCount = 0;
+    
+    // 用来统计本地存在的路径，方便后面排查哪些云端文件被本地“无情删除了”
+    const localKeysSet = new Set(); 
 
+    // A. 上传与更新比对
     for (const filePath of localFiles) {
         const relativePath = path.relative(SRC_DIR, filePath).replace(/\\/g, '/');
+        localKeysSet.add(relativePath);
         const isSourcesJson = relativePath === 'sources.json';
 
         try {
             let shouldUpload = false;
-            let isOverwrite = false; // 标记是否属于“内容变更导致的覆盖更新”
-
-            // 提前把本地文件的 Buffer 读出来，因为算 MD5 和上传都要用，免得读两次
+            let logPrefix = "";
             const fileBuffer = fs.readFileSync(filePath);
 
             if (isSourcesJson) {
-                // 如果是 sources.json，不查云端状态，直接强制覆盖上传
                 shouldUpload = true;
-                console.log(`🔄 [核心索引] 发现核心文件，准备强制更新: ${relativePath}`);
+                logPrefix = "🔄 [核心索引] 强更文件";
             } else {
-                // 🌟 普通资产：引入 MD5 比对机制
-                const remote = await getRemoteFileMetadata(relativePath);
-
-                if (!remote.exists) {
-                    // 云端压根没有，必须上传
+                // 🌟 核心升级 2：在这里直接从内存 Map 里取，再也不用慢吞吞发网络网络请求了！
+                if (!remoteMap.has(relativePath)) {
                     shouldUpload = true;
-                    console.log(`📤 [新文件] 远程不存在，准备上传: ${relativePath}`);
+                    logPrefix = "📤 [新资产] 准备上传";
                 } else {
-                    // 云端存在，开始核对 MD5 内容
                     const localMd5 = calculateLocalMD5(fileBuffer);
-                    
-                    if (localMd5 === remote.etag) {
-                        // MD5 完全一致，说明资产没有任何变动
-                        console.log(`⏭️  [跳过] 资源内容无变化: ${relativePath}`);
+                    const remoteEtag = remoteMap.get(relativePath);
+
+                    if (localMd5 === remoteEtag) {
                         skippedCount++;
+                        continue; // MD5 完美撞车，直接跳过，连日志都省了
                     } else {
-                        // 🌟 MD5 不一致，说明老哥你在本地替换了同名图片！强制触发上传
                         shouldUpload = true;
-                        isOverwrite = true;
-                        console.log(`🔄 [覆盖更新] 检查到内容已发生变更: ${relativePath}`);
+                        logPrefix = "🔄 [内容变更] 覆盖更新";
                     }
                 }
             }
 
-            // 执行上传逻辑
             if (shouldUpload) {
+                console.log(`${logPrefix}: ${relativePath}`);
                 await r2Client.send(new PutObjectCommand({
                     Bucket: bucket,
                     Key: relativePath,
                     Body: fileBuffer,
                     ContentType: getContentType(filePath),
-                    // 普通资源拉满缓存，但 sources.json 作为经常变动的索引，将其缓存设为 0
                     CacheControl: isSourcesJson 
                         ? "no-cache, no-store, must-revalidate" 
                         : "public, max-age=31536000, immutable"
                 }));
                 
-                console.log(`✅ [完成] 成功同步: ${relativePath}`);
-                
-                if (isSourcesJson || isOverwrite) {
+                if (isSourcesJson || logPrefix.includes("内容变更")) {
                     forcedUpdateCount++;
                 } else {
                     uploadedCount++;
                 }
             }
         } catch (err) {
-            console.error(`❌ [失败] 处理文件 ${relativePath} 时翻车:`, err.message);
+            console.error(`❌ 处理文件翻车 ${relativePath}:`, err.message);
+        }
+    }
+
+    // 🌟 核心升级 3：清理垃圾（如果本地删除了某图片，云端自动连坐删除）
+    let deletedCount = 0;
+    const keysToDelete = [];
+    
+    for (const remoteKey of remoteMap.keys()) {
+        if (!localKeysSet.has(remoteKey)) {
+            keysToDelete.push({ Key: remoteKey });
+        }
+    }
+
+    if (keysToDelete.length > 0) {
+        console.log(`\n🧹 检查到有 ${keysToDelete.length} 个文件在本地已被老哥删除，开始清理云端...`);
+        try {
+            // S3 协议支持批量删，每次最多送 1000 个
+            await r2Client.send(new DeleteObjectsCommand({
+                Bucket: bucket,
+                Delete: { Objects: keysToDelete }
+            }));
+            for (const d of keysToDelete) {
+                console.log(`🗑️ [清理残留] 成功抹去: ${d.Key}`);
+            }
+            deletedCount = keysToDelete.length;
+        } catch (delErr) {
+            console.error("❌ 清理云端垃圾残留失败:", delErr.message);
         }
     }
 
     console.log(`\n🎉 同步工作全部结束！`);
-    console.log(`📊 统计报告: 新增资源: ${uploadedCount} 个 | 覆盖更新(含索引): ${forcedUpdateCount} 个 | 保持原样跳过: ${skippedCount} 个\n`);
+    console.log(`📊 统计报告:`);
+    console.log(`   ✨ 新增同步: ${uploadedCount} 个`);
+    console.log(`   🔄 内容覆盖: ${forcedUpdateCount} 个`);
+    console.log(`   🗑️ 自动清理: ${deletedCount} 个`);
+    console.log(`   ⏭️  保持原样: ${skippedCount} 个\n`);
 }
 
 main();
