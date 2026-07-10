@@ -3,6 +3,9 @@ title: 暗影之炬 - 伊格尼姆
 pubDate: 2026-07-09 23:32:38
 ---
 
+import HammerList from '../../../../components/HammerList.astro'
+import CustomCard from '../../../../components/CustomCard.astro'
+
 <R2Image src="/Flame.webp"/>
 
 你已经准备好驾驭暗影之炬伊格尼姆了。不过，你可能会问，为什么要选用一对象征着光芒的武器呢?
@@ -12,6 +15,24 @@ pubDate: 2026-07-09 23:32:38
 ## 基础操作
 
 用攻击在移动中远程打击敌人，或用特技创造环绕自身的飞弹。
+
++ 攻击
+
+普通攻击，向前发射一个飞弹。
+
++ Ω 攻击
+
+向前连续发射 4-8 个飞弹，随后进入连续射击状态，每次射击消耗 5 点法力向敌人射击 2 个飞弹。
+
++ 特技
+
+射出一个飞弹，环绕角色一圈后消失。
+
++ Ω 特技
+
+射出两个飞弹环绕角色飞行，可以叠加。
+
+
 
 ## 形态
 
@@ -92,3 +113,46 @@ pubDate: 2026-07-09 23:32:38
 |IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
 |V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={3}/> </span>|
 |VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+## <R2Image src="/elements/Daedalus_Hammer.webp" /> 附魔
+<HammerList>
+  <CustomCard title="暗藏回旋" icon="/FlameHamer/Hidden_Helix.webp">
+    你的特技额外创造 +1 发飞弹。
+  </CustomCard>
+  <CustomCard title="利落萦绕" icon="/FlameHamer/Clean_Coil.webp">
+    你引导Q特技的速度加快20%，且消耗 -10 <InlineLabel key="magick" />。
+  </CustomCard>
+  <CustomCard title="盛怒飞焰" icon="/FlameHamer/Furious_Blaze.webp">
+    当你引导攻击时，你的移动和攻击速度加快 20%。
+  </CustomCard>
+  <CustomCard title="熔融回旋" icon="/FlameHamer/Melting_Helix.webp">
+    你的特技会对 <InlineLabel key="armor" /> 造成 +100 伤害。
+  </CustomCard>
+  <CustomCard title="持久萦绕" icon="/FlameHamer/Enduring_Coil.webp">
+    你的 Ω 特技持续时间 +2 秒。
+  </CustomCard>
+  <CustomCard title="极意飞焰" icon="/FlameHamer/Mega_Spark.webp">
+    你的攻击距离增加 20%，且造成 +30% 伤害。
+  </CustomCard>
+  <CustomCard title="分裂飞焰" icon="/FlameHamer/Dividing_Blaze.webp">
+    你的攻击在首次命中敌人后分裂成 2 个。
+  </CustomCard>
+  <CustomCard title="归来飞焰" icon="/FlameHamer/Inverted_Blaze.webp">
+    你的攻击会留存 +2 秒，且在你冲刺时向你飞回。
+  </CustomCard>
+  <CustomCard title="骤然爆发" icon="/FlameHamer/Sudden_Burst.webp">
+    你引导Q攻击的速度加快50%，且消耗 -1 <InlineLabel key="magick" />。
+  </CustomCard>
+  <CustomCard title="增幅回旋" icon="/FlameHamer/Rising_Helix.webp">
+    你的特技随激活时间逐渐变大并提升伤害，伤害至多提升 +25%。
+  </CustomCard>
+  <CustomCard title="舞动回旋" icon="/FlameHamer/Whirling_Helix.webp">
+    你的特技回旋速度加快 20%。
+  </CustomCard>
+  <CustomCard title="沉重飞焰" icon="/FlameHamer/Enduring_Coil.webp">
+    你的攻击会击退敌人，且具有 +10 威力。
+  </CustomCard>
+  <CustomCard title="魔神焰心" icon="/FlameHamer/Demonic_Cell.webp">
+    在你奔跑时，你的攻击和特技具有 +5 威力。
+  </CustomCard>
+</HammerList>

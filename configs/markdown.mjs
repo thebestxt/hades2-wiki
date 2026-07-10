@@ -47,6 +47,7 @@ export default {
         [
           { name: 'R2Image', path: '/src/components/R2Image.astro' },
           { name: 'InlineLabel', path: '/src/components/InlineLabel.astro' },
+          { name: 'InlineTooltip', path: '/src/components/InlineTooltip.astro' },
         ]
       ]
     ],
