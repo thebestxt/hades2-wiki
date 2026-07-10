@@ -12,11 +12,23 @@ export default defineConfig({
     integrations: [
 		// @ts-ignore
 		starlight({
+			customCss: [
+				'./src/assets/style/main.scss',
+			],
 			...starLightConf,
 		}),
 		vue(),
 		mdx(),
 	],
 	// @ts-ignore
-	markdown: markdownConf
+	markdown: markdownConf,
+	// vite: {
+	// 	css: {
+	// 		preprocessorOptions: {
+	// 			scss: {
+	// 				additionalData: `@use "/src/assets/style/main.scss";`
+	// 			}
+	// 		}
+	// 	}
+	// }
 });

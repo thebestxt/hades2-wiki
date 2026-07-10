@@ -1,0 +1,18 @@
+---
+// src/components/HammerList.astro
+// 🌟 抛弃原先笨重的 list 属性，改用 Astro 自带的 <slot /> 接收子元素
+---
+
+<div class="hammer-list">
+    <slot />
+</div>
+
+<style>
+    .hammer-list {
+        display: flex;
+        flex-direction: column;
+        
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+</style>

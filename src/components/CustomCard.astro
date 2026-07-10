@@ -1,0 +1,62 @@
+---
+import R2Image from './R2Image.astro';
+
+interface Props {
+	icon: string;
+    title: string;
+    content: string;
+}
+
+const { icon, title } = Astro.props;
+---
+
+<div class="custom-card-container">
+    <R2Image class="left-image" src={icon} />
+    <div class="right-text">
+        <div class="name">{ title }</div>
+        <div class="content"> <slot></slot> </div>
+    </div>
+</div>
+
+<style lang="scss">
+.custom-card-container {
+    width: 100%;
+    border: 1px solid var(--sl-color-gray-5);
+    background-color: var(--sl-color-black);
+    padding: 10px 30px;
+    // gap: clamp(.5rem, .125rem + 1vw, 1rem);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    .left-image {
+        width: 75px;
+        height: 75px;
+        border-radius: 20px;
+    }
+    .right-text {
+        margin-top: 0;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .name {
+            font-size: larger;
+            font-weight: 800;
+            color: var(--sl-color-white);
+        }
+        .content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            * {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            // font-size: ;
+        }
+    }
+}
+</style>

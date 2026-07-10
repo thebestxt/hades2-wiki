@@ -1,0 +1,78 @@
+---
+import R2Image from './R2Image.astro'
+const {
+    key = "",
+    src = "",
+    content = "",
+    num = null,
+    ...attrs
+} = Astro.props
+const keyMap = {
+    // 矿和材料
+    sliver: { label: '银矿', icon: '/reagens/Silver.webp' },
+    marble: { label: '大理石', icon: '/reagens/Marble.webp' },
+    psyche: { label: '魂魄', icon: '/reagens/Psyche.webp', },
+    nightmare: { label: '梦魇', icon: '/reagens/Nightmare.webp', },
+    peral: { label: '珍珠', icon: '/reagens/Pearl.webp', },
+    limestone: { label: '石灰岩', icon: '/reagens/Limestone.webp', },
+    tears: { label: '泪珠', icon: '/reagens/Tears.webp', },
+    fangs: { label: '尖牙', icon: '/reagens/Fangs.webp', },
+
+    // 植物
+    lotus: { label: '莲花', icon: '/plants/Lotus.webp', },
+
+    // 祝福
+    premiumService: { label: '尊享服务', icon: '/boons/Premium_Service.webp', },
+    
+    // 符号
+    armor: { label: '护甲', icon: '/values/Armor.webp', },
+    health: { label: '生命值', icon: '/values/Health.webp', },
+    magick: { label: '魔力值', icon: '/values/Magick.webp', },
+    
+}
+
+const getMapItem = () => {
+    if (!!key && Object.keys(keyMap).includes(key)) {
+        return keyMap[key as keyof typeof keyMap]
+    } else {
+        return null
+    }
+}
+
+const getMapItemParam = (k: string, dft: string) => {
+    const mapItem = getMapItem()
+    if (mapItem !== null && !!mapItem[k]) {
+        return mapItem[k]
+    } else {
+        return dft
+    }
+}
+---
+
+<span class="inline-label-container" {...attrs}>
+    <R2Image class="inline-label-image" src={getMapItemParam('icon', src)}/>
+    <span class="inline-label-text">{ getMapItemParam('label', content) }</span>
+    { num !== null ? <span class="inline-label-text">x{ num !== null ? num : '' }</span> : '' }
+</span>
+<style lang="scss">
+    .inline-label-container {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        vertical-align: middle;
+        background-color: #f4f5f8;
+        border-radius: 5px;
+        padding: 2px 5px;
+        margin: 0 4px;
+        gap: 4px;
+        .inline-label-image {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+        .inline-label-text {
+            font-size: small;
+            margin-left: 5px;
+        }
+    }
+</style>

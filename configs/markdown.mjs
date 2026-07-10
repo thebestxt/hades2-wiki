@@ -45,7 +45,8 @@ export default {
       [
         remarkAutoImportGlobalComponents,
         [
-          { name: 'R2Image', path: '/src/components/R2Image.astro' }
+          { name: 'R2Image', path: '/src/components/R2Image.astro' },
+          { name: 'InlineLabel', path: '/src/components/InlineLabel.astro' },
         ]
       ]
     ],

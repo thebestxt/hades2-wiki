@@ -1,0 +1,164 @@
+---
+title: 女巫之杖 戴斯奇拉
+pubDate: 2026-07-09 23:32:38
+---
+
+import HammerList from '../../../../components/HammerList.astro'
+import CustomCard from '../../../../components/CustomCard.astro'
+
+<R2Image src="/Staff.webp"/>
+
+在暗夜武器中，戴斯奇拉是在你接近时最先醒转的。她属于你。
+
+挥舞这一柄从不应该被使用的武器是什么感觉?她在混沌之中铸造而成，原本是作为最后的预防措施，在迫不得已之时将她同为武器的兄弟们折服。
+
+## 基础操作
+
+用基础攻击快速击打近距敌人，或用特技和 Ω 招式攻击远距敌人。
+
+## 形态
+
+
+### <R2Image src="/StaffHamer/Staff_Melinoe.webp" /> 墨利诺厄形态
+
+获得魔力值上限，且特技具有更高威力。
+
+魔力值上限与特技威力：
+0 / +10 / +20 / +30 / +40 / +50
+
+#### 升级花费
+
+
+|等级|花费|
+|:--:|:--:|
+|I|免费|
+|II|<span class="weapon-table-td"><InlineLabel key="sliver" num={2}/>，<InlineLabel key="psyche" num={10}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="sliver" num={3}/>，<InlineLabel key="psyche" num={20}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="sliver" num={4}/>，<InlineLabel key="psyche" num={30}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="sliver" num={10}/>，<InlineLabel key="psyche" num={50}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/StaffHamer/Staff_Circe.webp" /> 喀尔刻形态
+
+每当你使用法阵时，你的魔宠也会如此做，并形成灵能链条。
+
+> 匿踪者的一位大祭司曾用此杖带来了必要的变革。
+
+灵能链条伤害（每 0.2 秒）：10 / 15 / 20 / 25 / 30 / 45
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="lotus" num={5}/>，<InlineLabel key="marble" num={5}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/StaffHamer/Staff_Momus.webp" /> 摩墨斯形态
+
+施展 Ω 招式时，其效果在相同位置生效至多3次，直到再次施展为止。
+
+额外 Ω 招式间隔：4 / 3.5 / 3 / 2.5 / 2 / 1
+
+> 就连从不动怒的黑夜女神本尊，也难以容忍他的恶语相加。
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="peral" num={1}/>，<InlineLabel key="limestone" num={2}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/StaffHamer/Staff_Anubis.webp" /> 阿努比斯形态
+
+你拥有安卡神杖，会在击杀敌人时唤起孤独暗灵。
+
+Ω 招式速度及伤害：+10% / +15%  / +20% / +25% / +30% / +45%
+
+> 这块还缺一句话，等我解锁了再补
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="tears" num={5}/>，<InlineLabel key="fangs" num={2}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={3}/></span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+## <R2Image src="/elements/Daedalus_Hammer.webp" /> 附魔
+
+<HammerList>
+  <CustomCard title="凶残敲打" icon="/StaffHamer/Wicked_Thrasher.webp">
+    你的攻击具有+30威力。
+  </CustomCard>
+  
+  <CustomCard title="杖打一片" icon="/StaffHamer/Extending_Wallop.webp">
+    你的基础攻击距离更远，且对远距离的敌人造成+100%伤害。
+  </CustomCard>
+  
+  <CustomCard title="熔融横扫" icon="/StaffHamer/Melting_Swipe.webp">
+    <span class="hammer-content-span">你的冲刺攻击范围更大，且会对 <InlineLabel key="armor" /> 造成+900伤害。</span>
+  </CustomCard>
+  
+  <CustomCard title="双重月弹" icon="/StaffHamer/Dual_Moonshot.webp">
+    <span class="hammer-content-span">你的特技发射2发飞弹，但射程-40%。</span>
+  </CustomCard>
+  
+  <CustomCard title="曳光月弹" icon="/StaffHamer/Shimmering_Moonshot.webp">
+    <span class="hammer-content-span">你的特技可以额外向至多2个敌人弹射，每次弹射造成+10%伤害。</span>
+  </CustomCard>
+  
+  <CustomCard title="横竖皆祸" icon="/StaffHamer/Cross_Cataclysm.webp">
+    <span class="hammer-content-span">你的 Ω 攻击造成+50%伤害，且会向四个方向攻击。</span>
+  </CustomCard>
+  
+  <CustomCard title="迅疾敲打" icon="/StaffHamer/Rapid_Thrasher.webp">
+    <span class="hammer-content-span">你的攻击速度加快50%。</span>
+  </CustomCard>
+  
+  <CustomCard title="迅疾月弹" icon="/StaffHamer/Rapid_Moonshot.webp">
+    <span class="hammer-content-span">你的特技速度加快25%。</span>
+  </CustomCard>
+  
+  <CustomCard title="吸血灾祸" icon="/StaffHamer/Vampiric_Cataclysm.webp">
+    <span class="hammer-content-span">当你以 Ω 攻击击杀敌人时，恢复5 <InlineLabel key="health" /> 。</span>
+  </CustomCard>
+  
+  <CustomCard title="究极月炮" icon="/StaffHamer/Giga_Moonburst.webp">
+    <span class="hammer-content-span">你的Q特技可以额外引导+30 <InlineLabel key="magick" /> ，以在更大的范围内造成+300%伤害。</span>
+  </CustomCard>
+  
+  <CustomCard title="以太月炮" icon="/StaffHamer/Aetheric_Moonburst.webp">
+    <span class="hammer-content-span">你的Q特技获得强力攻击，可以造成+50%伤害并恢复20 <InlineLabel key="magick" /> 。</span>
+  </CustomCard>
+  
+  <CustomCard title="映射敲打" icon="/StaffHamer/Mirrored_Thrasher.webp">
+    <span class="hammer-content-span">你的攻击命中2次，但消耗+5 <InlineLabel key="magick" /> 。</span>
+  </CustomCard>
+  
+  <CustomCard title="魂盈安卡" icon="/StaffHamer/Soulfilled_Ankh.webp">
+    <span class="hammer-content-span">你的攻击具有+5威力，且在更大的范围内造成伤害。</span>
+  </CustomCard>
+  
+  <CustomCard title="映射安卡" icon="/StaffHamer/Mirrored_Ankh.webp">
+    <span class="hammer-content-span">你的 Ω 攻击额外创造1个伤害场，位于首个伤害场前方。</span>
+  </CustomCard>
+  
+  <CustomCard title="圣甲虫铭刻" icon="/StaffHamer/Scarab_Etchings.webp">
+    <span class="hammer-content-span">孤独暗灵造成+50伤害，且有75%概率在命中敌人后重新出现。</span>
+  </CustomCard>
+  
+  <CustomCard title="法老铭刻" icon="/StaffHamer/Pharaoh_Etchings.webp">
+    <span class="hammer-content-span">孤独暗灵造成+50%伤害，且会冲向被你的 Ω 特技击中的敌人。</span>
+  </CustomCard>
+</HammerList>
