@@ -3,4 +3,146 @@ title: 姊妹双刃 - 利姆欧罗
 pubDate: 2026-07-09 23:32:38
 ---
 
+import HammerList from '../../../../components/HammerList.astro'
+import CustomCard from '../../../../components/CustomCard.astro'
+
 <R2Image src="/Blade.webp"/>
+
+姊妹双刃利姆欧罗是为你，或者说为我们银月姊妹所打造的。双刃翻飞的乐章，是你许多敌人听到的最后的声音。
+
+播种自有收割时；昨夜之因，便是今夜之果。挥舞双刃时谨记。
+
+## 基础操作
+
+以狂怒的攻击切削敌人，或从远处用特供掷出飞刃。
+
+## 形态
+
+### <R2Image src="/BladeHamer/Blade_Melinoe.webp" /> 墨利诺厄形态
+
+你的攻击和特技在背刺时造成更高伤害。
+
+背刺伤害：+0% / +40% / +60% / +80% / +100% / +200%
+
+> 此等大任自然需要锋芒毕露的武器。
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="sliver" num={1}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="sliver" num={2}/>，<InlineLabel key="fateFabric" num={1}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="sliver" num={4}/>，<InlineLabel key="fateFabric" num={1}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="sliver" num={6}/>，<InlineLabel key="fateFabric" num={1}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="sliver" num={15}/>，<InlineLabel key="fateFabric" num={5}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/BladeHamer/Blade_Artemis.webp" /> 阿尔忒弥斯形态
+
+当你引导 Ω 攻击时，你可以间歇性格挡，随后立即获得游刃有余。
+
+Ω 攻击速度：+20% / +30% / +40% / +50% / +60% / +90%
+
+> 一道银光闪过；究竟是狩猎女神还是月亮，谁也说不准。
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="sliver" num={15}/>，<InlineLabel key="glassrock" num={1}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/BladeHamer/Blade_Pan.webp" /> 潘形态
+
+你的特技会追踪身处法阵中的敌人，且引导更久即可发射更多飞刃。
+
+Ω 特技飞刃上限：+1 / +2 / +3 / +4 / +5 / +8
+
+> 自然生长的羊角穿透血肉时，与制作精良的锋刃无异。
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="shaderot" num={1}/>，<InlineLabel key="wool" num={2}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/BladeHamer/Blade_Morrigan.webp" /> 摩莉甘形态
+
+你拥有乌鸦双刃，可以进行三重血印仪式。
+
+三重血印伤害：333 / 444 / 555 / 666 / 777 / 999
+
+
+> 这里有句狠话
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="iron" num={8}/>，<InlineLabel key="feather" num={2}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={3}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+## <R2Image src="/elements/Daedalus_Hammer.webp" /> 附魔
+
+<HammerList>
+  <CustomCard title="横扫伏击" icon="/BladeHamer/Sweeping_Ambush.webp">
+    你的 Ω 攻击在更大范围内造成 +400% 伤害，但消耗 +20 <InlineLabel key="magick" />。
+  </CustomCard>
+  <CustomCard title="弹射神锋" icon="/BladeHamer/Dancing_Knives.webp">
+    你的特技造成 +15% 伤害，且每把飞刃可以向至多 2 个敌人弹射。
+  </CustomCard>
+  <CustomCard title="神准纷刃" icon="/BladeHamer/Sureshot_Flurry.webp">
+    你的 Ω 特技的所有飞刃都向正前方发射，而且特技的射程 +30%。
+  </CustomCard>
+  <CustomCard title="迅疾厮杀" icon="/BladeHamer/Rapid_Onslaught.webp">
+    你的攻击速度加快 35%。
+  </CustomCard>
+  <CustomCard title="熔融飞镰" icon="/BladeHamer/Melting_Sickle.webp">
+    你的基础特技的每一击都会对 <InlineLabel key="armor" /> 造成 +500 伤害。
+  </CustomCard>
+  <CustomCard title="背后插刀" icon="/BladeHamer/Skulking_Onslaught.webp">
+    你的攻击在背刺时造成 +150% 伤害。
+  </CustomCard>
+  <CustomCard title="收割神锋" icon="/BladeHamer/Reaper_Knives.webp">
+    你的特技具有 +15 威力，且在更大范围内造成伤害。
+  </CustomCard>
+  <CustomCard title="暗藏神锋" icon="/BladeHamer/Hidden_Knives.webp">
+    你的特技造成 +20% 伤害，且你的 Ω 特技额外发射 +3 把飞刀。
+  </CustomCard>
+  <CustomCard title="终末一击" icon="/BladeHamer/Final_Slice.webp">
+    你的基础攻击序列的最后一击在更大的范围内造成 +300% 伤害。
+  </CustomCard>
+  <CustomCard title="凶残厮杀" icon="/BladeHamer/Wicked_Onslaught.webp">
+    你的攻击具有+20威力。
+  </CustomCard>
+  <CustomCard title="骤然纷刃" icon="/BladeHamer/Sudden_Flurry.webp">
+    你引导 Ω 特技的速度加快40%。
+  </CustomCard>
+  <CustomCard title="翻腕神锋" icon="/BladeHamer/Trick_Knives.webp">
+    你的冲刺攻击同时还会向前方扇形区域同时发射 3 发基础特技。
+  </CustomCard>
+  <CustomCard title="魅影烙印" icon="/BladeHamer/Phantom_Etchings.webp">
+    三重血印造成 +222 伤害。
+  </CustomCard>
+  <CustomCard title="女妖烙印" icon="/BladeHamer/Banshee_Brand.webp">
+    三重血印有 33% 的概率额外生效一次。
+  </CustomCard>
+  <CustomCard title="恶鸦缠身" icon="/BladeHamer/Sinister_Pinion.webp">
+    你的特技反复造成伤害的速度加快100%。
+  </CustomCard>
+
+
+</HammerList>
