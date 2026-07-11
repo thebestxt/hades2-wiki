@@ -3,4 +3,167 @@ title: 银白之颅 - 勒瓦尔
 pubDate: 2026-07-09 23:32:38
 ---
 
-<R2Image src="/Skull.webp"/>
+import HammerList from '../../../../components/HammerList.astro'
+import CustomCard from '../../../../components/CustomCard.astro'
+
+<R2Image src="/Skull.png"/>
+
+银白之颅原本属于栽决者勒瓦尔，而勒瓦尔如今属于你。
+
+这是勒瓦尔昝由自取，而且恕我直言，你对待她比起她原先对待其他
+人要负责得多 ———— 算她走运。
+
+## 基础操作
+
+用爆炸性的攻击炮轰敌人，并用前冲的特技拾取头颅弹药。
+
++ 攻击
+
+普通攻击：向前发射一个骷髅头，骷髅头到达射程极限会落地开始读条，等待一段时间会飞回角色位置，也可以在读条结束前走到落点位置拾取骷髅头，初始只有 3 个骷髅头弹药，用完无法继续攻击。
+
++ Ω 攻击
+
+原地蓄力，向指定方向投掷一个骷髅头造成大范围 AOE 伤害。
+
++ 特技
+
+向指定方向位移一段距离。
+
++ Ω 特技
+
+原地蓄力向指定方向冲去，途中还会向两边释放光波。
+
+## 形态
+
+### <R2Image src="/SkullHamer/Skull_Melinoe.webp" /> 墨利诺厄形态
+
+每有一发已使用而未捡回的弹药，你的攻击便获得额外的威力。
+
+每发已使用弹药获得额外威力：+0 / +3 / +6 / +9 / +12 / +21
+
+> 黑夜的意志从不会被记载，但亡者和暗影都是其见证。
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="bronze" num={1}/>，<InlineLabel key="glassrock" num={2}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="limestone" num={1}/>，<InlineLabel key="ashes" num={5}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="limestone" num={2}/>，<InlineLabel key="ashes" num={10}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="limestone" num={3}/>，<InlineLabel key="ashes" num={15}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="limestone" num={25}/>，<InlineLabel key="ashes" num={25}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+
+### <R2Image src="/SkullHamer/Skull_Medea.webp" /> 美狄亚形态
+
+你的基础攻击留在身旁，于特技命中时 3 秒后爆炸。
+
+基础攻击和基础特技伤害：+30% / +45% / +60% / +75% / +90% / +135%
+
+> 她总是将敌人的头骨留在身边，以此作为慰藉；而其中有一颗让她格外爱不释手。
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="iron" num={4}/>，<InlineLabel key="nightshade" num={1}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/SkullHamer/Skull_Persephone.webp" /> 泊尔塞福涅形态
+
+你的 Ω 特技具有萌芽，且可以转向。你的祝福初始便具有额外等级提升。
+
+祝福随机额外等级上限：+2 / +3 / +4 / +5 / +6 / +9
+
+> 生与死的概念盘根错节，一如冥后泊尔塞福涅既属于光明，又属于黑暗。
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="poppy" num={5}/>，<InlineLabel key="moss" num={1}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/SkullHamer/Skull_Hel.webp" /> 海拉形态
+
+你拥有寒鬓霜鬃，令你在 Ω 特技之后化身瓦尔基里。
+
+瓦尔基里攻击速度：+5% / +10% / +15% / +20% / +25% / +35%
+
+> 这里有句狠话
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="adamant" num={12}/>，<InlineLabel key="serpentScales" num={2}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={3}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+## <R2Image src="/elements/Daedalus_Hammer.webp" /> 附魔
+<HammerList>
+  <CustomCard title="爆弹储备" icon="/SkullHamer/Bolstered_Array.webp">
+    获得 +2 弹药。
+  </CustomCard>
+  <CustomCard title="自返爆弹" icon="/SkullHamer/Fetching_Array.webp">
+    你的弹药会自动返回你身边，且飞回的速度加快 100%。
+  </CustomCard>
+  <CustomCard title="熔融截击" icon="/SkullHamer/Melting_Tackle.webp">
+    你的基础特技会对 <InlineLabel key="armor" /> 造成+600伤害。
+  </CustomCard>
+  <CustomCard title="凶相毕露" icon="/SkullHamer/Wide_Grin.webp">
+    你的攻击会将所有弹药一起呈扇形射出。
+  </CustomCard>
+  <CustomCard title="迅疾突击" icon="/SkullHamer/Rapid_Driver.webp">
+    你的特技速度加快 35%。
+  </CustomCard>
+  <CustomCard title="巨人突击" icon="/SkullHamer/Colossus_Driver.webp">
+    你的特技具有 +30 威力，且你在过程中受到的伤害 -30%。
+  </CustomCard>
+  <CustomCard title="极意突击" icon="/SkullHamer/Mega_Driver.webp">
+    你的特技将你向前推进得更快，且造成 +50% 伤害。
+  </CustomCard>
+  <CustomCard title="扭转震荡" icon="/SkullHamer/Twisting_Crash.webp">
+    在你的 Ω 特技的冲击波在向外发射后，会向内再次发射。
+  </CustomCard>
+  <CustomCard title="疾行引爆" icon="/SkullHamer/Boosted_Ignition.webp">
+    在你冲刺或使用特技后，你的攻击速度更快，且具有 +15 威力。
+  </CustomCard>
+  <CustomCard title="烈性爆弹" icon="/SkullHamer/Destructive_Array.webp">
+    你的弹药落地时会对周围造成伤害，伤害值为你攻击伤害的 50%。
+  </CustomCard>
+  <CustomCard title="魂能爆弹" icon="/SkullHamer/Possessed_Array.webp">
+    你的弹药在拾起时自动施放Q攻击，但需要消耗 25 <InlineLabel key="magick" />。
+  </CustomCard>
+  <CustomCard title="杀意引爆" icon="/SkullHamer/Looming_Ignition.webp">
+    你的攻击爆炸前，在 0.7 秒内逐渐增加范围和伤害，至多增加 50%。
+  </CustomCard>
+  <CustomCard title="崇敬遗物" icon="/SkullHamer/Venerated_Relic.webp">
+    你的瓦尔基里形态持续时间 +3 秒。
+  </CustomCard>
+  <CustomCard title="凌人之目" icon="/SkullHamer/Leering_Glance.webp">
+    你的基础攻击向 +1 个敌人弹射，且弹射命中时造成 +15% 伤害。
+  </CustomCard>
+  <CustomCard title="卢恩突击" icon="/SkullHamer/Runic_Driver.webp">
+    你的特技飞行速度加快，且每命中一个敌人造成 +15% 伤害。
+  </CustomCard>
+  <CustomCard title="加姆凝视" icon="/SkullHamer/Garmr_Gaze.webp">
+    你的攻击射程 +25%，且造成 +25% 伤害。
+  </CustomCard>
+  <CustomCard title="海尔海姆充能" icon="/SkullHamer/Helheim_Charge.png">
+    你的 Ω 攻击额外连续发射 2 次。
+  </CustomCard>
+
+</HammerList>

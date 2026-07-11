@@ -3,4 +3,162 @@ title: 漆黑战衣 - 柯辛斯
 pubDate: 2026-07-09 23:32:38
 ---
 
+import HammerList from '../../../../components/HammerList.astro'
+import CustomCard from '../../../../components/CustomCard.astro'
+
 <R2Image src="/Coat.webp"/>
+
+暗夜武器诞生于暗影之中，但孕育它们的暗影未曾消散，而是凝聚成了这一最终形态。
+
+所谓武器，便是我们的躯体与意志的延伸。柯辛斯则是这一点的具象体现。
+
+## 基础操作
+
++ 攻击
+
+向前方打出连续直拳。
+
++ Ω 攻击
+
+蓄力期间可以移动，期间可以格挡，松手后打出爆裂直拳。
+
++ 特技
+
+向前方发出一组导弹。
+
++ Ω 特技
+
+蓄力展示一个扇形区域，蓄力期间导弹会锁定敌人，松手后会轰炸敌人。
+
+## 形态
+
+### <R2Image src="/CoatHamer/Coat_Melinoe.webp" /> 墨利诺厄形态
+
+你的攻击、奔跑和移动速度更快。
+
+速度加成：+0% / +5% / +10% / +15% / +20% / +35%
+
+> 黑暗之蔓延，既会凭借其本身的意志，也会假托其忠仆的力量。
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="cinder" num={2}/>，<InlineLabel key="adamant" num={2}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="cinder" num={1}/>，<InlineLabel key="adamant" num={4}/> </span>|
+|III|<span class="weapon-table-td"><InlineLabel key="cinder" num={1}/>，<InlineLabel key="adamant" num={6}/> </span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="cinder" num={1}/>，<InlineLabel key="adamant" num={8}/> </span>|
+|V|<span class="weapon-table-td"><InlineLabel key="cinder" num={1}/>，<InlineLabel key="adamant" num={15}/> </span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/CoatHamer/Coat_Selene.webp" /> 塞勒涅形态
+
+起始时便获得星落如雨，一道隐藏巫咒，可以命中多个敌人并施加 <InlineTooltip key="shink" />  。
+
+巫咒就绪需要消耗魔力：100 / 90 / 80 / 70 / 60 / 40
+
+> 她那银光熠熠的战车中，还暗藏着怎样的力量与奥秘？
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="sliver" num={4}/>，<InlineLabel key="moonDust" num={4}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/CoatHamer/Coat_Nyx.webp" /> 倪克斯形态
+
+你拥有 <InlineTooltip key="boost" /> 助推，在激活后可以生成 <InlineTooltip key="shink" />。
+
+夜影伤害：15% / 30% / 45% / 60% / 75% / 100% 
+
+> 黑夜是世界冰冷而稳定的状态 ———— 既让人感到静谧，又令人心生恐惧。
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="plasma" num={4}/>，<InlineLabel key="darkness" num={1}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={1}/></span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+### <R2Image src="/CoatHamer/Coat_Shiva.webp" /> 湿婆形态
+
+你拥有生灭之相，令你可以吸收 Ω 特技的爆炸，累积灭世层数。
+
+灭世层数上限：2 / 3 / 4 / 5 / 6 / 8
+
+> 这里有句狠话
+
+#### 升级花费
+
+|等级|花费|
+|:--:|:--:|
+|I|<span class="weapon-table-td"><InlineLabel key="voidLens" num={2}/>，<InlineLabel key="nightmare" num={4}/> </span>|
+|II|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|III|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|IV|<span class="weapon-table-td"><InlineLabel key="nightmare" num={2}/></span>|
+|V|<span class="weapon-table-td"><InlineLabel key="nightmare" num={3}/></span>|
+|VI|<span class="weapon-table-td"><InlineLabel key="premiumService"/></span>|
+
+## <R2Image src="/elements/Daedalus_Hammer.webp" /> 附魔
+<HammerList>
+  <CustomCard title="熔融十字" icon="/CoatHamer/Melting_Cross.webp">
+    你的基础攻击会对 <InlineLabel key="armor" /> 造成 +250 伤害。
+  </CustomCard>
+  <CustomCard title="迅疾架构" icon="/CoatHamer/Rapid_Frame.webp">
+    你的攻击速度加快 35%。
+  </CustomCard>
+  <CustomCard title="收割架构" icon="/CoatHamer/Reaper_Frame.webp">
+    你的攻击具有 +10 威力，且在更大范围内造成伤害。
+  </CustomCard>
+  <CustomCard title="攻城架构" icon="/CoatHamer/Siege_Frame.webp">
+    你的攻击造成 +30% 伤害，且距离更远。
+  </CustomCard>
+  <CustomCard title="撼世冲撞" icon="/CoatHamer/World_Collider.webp">
+    你的 Ω 攻击充能蓄满时具有 +100 威力。
+  </CustomCard>
+  <CustomCard title="冲天勾拳" icon="/CoatHamer/Exhaust_Riser.webp">
+    你的冲刺攻击额外命中 3 次
+  </CustomCard>
+  <CustomCard title="曳光火箭" icon="/CoatHamer/Shimmering_Rockets.webp">
+    你的特技会向至多 2 个敌人弹射。
+  </CustomCard>
+  <CustomCard title="盛怒火箭" icon="/CoatHamer/Furious_Rockets.webp">
+    你的特技发射和飞行速度加快 80%。
+  </CustomCard>
+  <CustomCard title="发射架构" icon="/CoatHamer/Launcher_Frame.webp">
+    每当你的攻击命中故人时，有 25% 的概率自动发射你的基础特技。
+  </CustomCard>
+  <CustomCard title="反击弹幕" icon="/CoatHamer/Counter_Barrage.webp">
+    使用 Ω 攻击格挡伤害后，你的基础特技自动发射 5 发弹药，于 3 秒后重新装填。
+  </CustomCard>
+  <CustomCard title="骤然弹雨" icon="/CoatHamer/Sudden_Salvo.webp">
+    你的Q特技锁定更快，且消耗的 <InlineLabel key="magick" /> -20%。
+  </CustomCard>
+  <CustomCard title="开膛火箭" icon="/CoatHamer/Ripper_Rockets.webp">
+    你的特技在命中相同的敌人后短暂获得 +5 威力，至多叠加 5 次。
+  </CustomCard>
+  <CustomCard title="巨象火箭" icon="/CoatHamer/Elephant_Rockets.webp">
+    你的特技具有 +10 威力，且向正前方发射。
+  </CustomCard>
+  <CustomCard title="主宰反击" icon="/CoatHamer/Counter_Supreme.webp">
+    使用 Ω 攻击格挡伤害后，获得至多 3 层灭世。
+  </CustomCard>
+  <CustomCard title="觉醒火箭" icon="/CoatHamer/Awakened_Rockets.webp">
+    每当你吸收 Ω 特技的爆炸时，产生一次基础特技的爆炸，但会失去 10 <InlineLabel key="magick" />。
+  </CustomCard>
+  <CustomCard title="新月勾拳" icon="/CoatHamer/Mooncrest_Riser.webp">
+    你的冲刺攻击范围更大，且造成 +40% 伤害。
+  </CustomCard>
+  <CustomCard title="查克拉冲撞" icon="/CoatHamer/Chakra_Collider.webp">
+    你的 Ω 攻击获得强力攻击，可以造成 +80% 伤害。
+  </CustomCard>
+</HammerList>
