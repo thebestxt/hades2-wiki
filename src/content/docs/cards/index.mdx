@@ -1,0 +1,456 @@
+---
+title: 阿卡那牌
+pubDate: 2026-07-11 20:13:44
+tableOfContents: false
+---
+
+import ArcanaCard from '../../../components/ArcanaCard.astro'
+import InlineLabel from '../../../components/InlineLabel.astro'
+
+<ArcanaCard index={1} grasp={1} name="女术士">
+    <div slot="describe">
+        > 她子然一身，无依无靠，因而学会了以自己的方式面对世间的诸般刁难。
+
+    </div>
+    <div slot="effect">Ω 招式加快 20% / 25% / 30% / 35%</div>
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={1}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={1}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={3}/>，<InlineLabel key="moly" num={1}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={2} name="逆子" grasp={1}>
+    <div slot="describe">
+        > 他对生命的渴望如此强烈，以至于冥界都难以将他束缚。
+
+    </div>
+    <div slot="effect">离开每个地点后恢复 3 / 4 / 5 / 6 <InlineLabel key="health" />。 </div>
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={3}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={2}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={3}/>，<InlineLabel key="cinder" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={3} name="猎手" grasp={2}>
+    <div slot="describe">
+        > 恪尽职守、身随心动，她是月下的掠影、影中的锋芒。
+
+    </div>
+    <div slot="effect"> <InlineLabel key="magick"/> 不足 100% 时，基础攻击和基础特技造成 +30% / +40% / +50% / +60% 伤害。 </div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={3}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={2}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={3}/>，<InlineLabel key="wool" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={4} name="永恒" grasp={3}>
+    <div slot="describe">
+        > 命中注定之事无法被避免，但或许可以被推迟。
+
+    </div>
+    <div slot="effect"> 引导 Ω 招式时，一切事物减缓，持续 0.8 / 1.0 / 1.2 / 1.5 秒。 </div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={30}/>，<InlineLabel key="peral" num={1}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={3}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={6}/>，<InlineLabel key="peral" num={4}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={5} name="月亮" graspCondition="激活周围的任意一张卡牌">
+    <div slot="describe">
+        > 她策马穿越浩渺夜空，将一切尽收眼底。
+
+    </div>
+    <div slot="effect"> 巫咒额外以每秒 1 / 2 / 3 / 4 <InlineLabel key="magick"/> 的速率自动充能。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={20}/>，<InlineLabel key="peral" num={1}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={3}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={6}/>，<InlineLabel key="peral" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={6} name="复仇三女神" grasp={2}>
+    <div slot="describe">
+        > 在冥界的最深处，有三个名号如同冥王本薛一样令人闻风丧胆。
+
+    </div>
+    <div slot="effect">对身处法阵中的敌人造成 +20% / +25% / +30% / +35% 伤害。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={3}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={2}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={3}/>，<InlineLabel key="cinder" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={7} name="坚毅" grasp={2}>
+    <div slot="describe">
+        > 他从众神手中盗来了火种，赠予了凡人；他因此受到惩罚，但也在磨难中愈发强大。
+
+    </div>
+    <div slot="effect">获得 +20 / +30 / +40 /+50 <InlineLabel key="health" /> 和 +20 / +30 / +40 / +50 <InlineLabel key="magick" />。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={10}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={2}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={4}/>，<InlineLabel key="feather" num={1}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={8} name="信使" grasp={1}>
+    <div slot="describe">
+        > 以他的神速，上天入地，无所不能。
+
+    </div>
+    <div slot="effect">施展法阵时，你短暂无敌并获得 50% / 60% / 70% / 80% 移动速度。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={20}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={1}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={3}/>，<InlineLabel key="feather" num={1}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={9} name="匿踪者" grasp={5}>
+    <div slot="describe">
+        > 他们遵循古誓，效力于暗影之下，复归于暗影之中。
+
+    </div>
+    <div slot="effect">每秒恢复 6 / 8 / 10 / 12  <InlineLabel key="magick" />。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={30}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={5}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={10}/>，<InlineLabel key="tears" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={10} name="黑夜" graspCondition="激活周围的任意一张卡牌">
+    <div slot="describe">
+        > 她从混沌中诞生；许多自然世界的框架都出自她手，地上地下皆是如此。
+
+    </div>
+    <div slot="effect"> Ω 组合技中的每个招式都具有 +9% / +12% / +15% / +18% 暴击率。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={35}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={3}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={5}/>，<InlineLabel key="darkness" num={1}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={11} name="迅疾者" grasp={1}>
+    <div slot="describe">
+        > 敢于挑战希腊最伟大的英雄的人，往往刚瞥见他长矛的寒光，便已一命呜呼。
+
+    </div>
+    <div slot="effect"> 奔跑速度加快 5% / 7% / 10% / 13%。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={15}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={1}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={3}/>，<InlineLabel key="goldenApple" num={1}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={12} name="死神" grasp={4}>
+    <div slot="describe">
+        > 对一些凡人来说，他是“悄然而至”；对另一些凡人来说，他则是“始料未及”。
+
+    </div>
+    <div slot="effect"> 每夜出发时拥有 +1 / +2 / +3 / +4 次 <InlineLabel key="deathDefiance" /> 。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={25}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={6}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={12}/>，<InlineLabel key="starDust" num={1}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={13} name="半人马" graspCondition="激活费用 1 至 5 的牌各一。">
+    <div slot="describe">
+        > 凡间那些最伟大的英雄，许多都有幸得到过他的悉心教导。
+
+    </div>
+    <div slot="effect"> 每5个地点后，获得 +3 / +4 / +5 / +6 <InlineLabel key="health" /> 和 +3 / +4 / +5 / +6 <InlineLabel key="magick" />。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={30}/>，<InlineLabel key="cinder" num={30}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={2}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={4}/>，<InlineLabel key="goldenApple" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={14} name="起源" grasp={5}>
+    <div slot="describe">
+        > 从无尽虚空中曾经诞下万物，而最终，万物亦会归入无尽虚空。
+
+    </div>
+    <div slot="effect"> 对受到至少2种来自不同奥林匹斯神的诅咒效果的敌人造成 +25% / +38% / +50% / +63% 伤害。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={35}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={5}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={10}/>，<InlineLabel key="thalamus" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={15} name="恋人" grasp={3}>
+    <div slot="describe">
+        > 音乐令他们相逢相知，就连死神也无法让他们长久分离。
+
+    </div>
+    <div slot="effect">在区域守卫遭遇战中，前 1 / 2 / 3 / 4 次受击时不会受到伤害。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={40}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={3}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={5}/>，<InlineLabel key="tears" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={16} name="巫术师" grasp={3}>
+    <div slot="describe">
+        > 将变化魔法练至炉火纯青的她，发现唯有事物的本质亘古不变。
+
+    </div>
+    <div slot="effect">每夜出发时拥有 +1 / +2 / +3 / +4 <InlineLabel key="changeOfFate" /> ，以及重塑地点奖励的能力。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={25}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={3}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={5}/>，<InlineLabel key="peral" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={17} name="摆渡人" grasp={5}>
+    <div slot="describe">
+        > 冥界深藏无数珍宝，但摆渡人对乘船进入冥界的亡者却只取分毫。
+
+    </div>
+    <div slot="effect">每夜出发时拥有 +200 / +250 / +300 / +350  <InlineLabel key="gold" />。 </div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={30}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={5}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={10}/>，<InlineLabel key="Zodiac_Sand" num={1}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={18} name="巧匠" grasp={3}>
+    <div slot="describe">
+        > 能够将材料变为神奇机巧者，世间少见；如他一样技艺卓绝者，更是闻所未闻。
+
+    </div>
+    <div slot="effect">每夜出发时拥有 1 / 2 / 3 / 4 次将 <InlineTooltip key="secondaryAward" /> 转化为 <InlineTooltip key="primaryAward" /> 的能力。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={35}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={3}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={3}/>，<InlineLabel key="wool" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={19} name="精锐" grasp={5}>
+    <div slot="describe">
+        > 众神也无法事事尽善尽美；然而，纵使身为肉体凡胎，亦当放手一搏。
+
+    </div>
+    <div slot="effect">祝福有 +30% / +40% / +50% / +60% 的概率包含传奇祝福，或稀有及以上的祝福。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={40}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={4}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={6}/>，<InlineLabel key="wool" num={2}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={20} name="王后" graspCondition="每个费用激活的牌均不超过 2 张">
+    <div slot="describe">
+        > 她离开了奥林匹斯，成为了冥界的王后，而地表世界也因此经历了漫漫长冬。
+
+    </div>
+    <div slot="effect">祝福选项有 +6% / +8% / +10% / +12% 的概率包含双重祝福。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={45}/>，<InlineLabel key="tears" num={1}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={2}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={4}/>，<InlineLabel key="peral" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={21} name="命运" graspCondition="激活周围的每一张卡牌">
+    <div slot="describe">
+        > 三位织匠掌管命运，就连众神也难逃其编排。
+
+    </div>
+    <div slot="effect">获得 +2 / +3 / +4 / +5 <InlineLabel key="changeOfFate"/> </div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={30}/>，<InlineLabel key="wool" num={1}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={3}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={6}/>，<InlineLabel key="wool" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={22} name="斗士" grasp={4}>
+    <div slot="describe">
+        > 生时，他们曾是死敌；死后，他们再次相遇，在至福乐土一起赢得了无限荣光。
+
+    </div>
+    <div slot="effect">每夜出发时拥有 +1 / +2 / +3 / +4 <InlineLabel key="changeOfFate" /> 。获得重塑祝福和某些其他选择的能力。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={35}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={5}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={10}/>，<InlineLabel key="goldenApple" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={23} name="力量" grasp={4}>
+    <div slot="describe">
+        > 胜过众神的膂力必须时刻严加监管。
+
+    </div>
+    <div slot="effect">没有 <InlineLabel key="deathDefiance"/> 次数时，受到的伤害 -20% / -30% / -40% / -50%，且造成的伤害 +20%。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={40}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={5}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={10}/>，<InlineLabel key="feather" num={3}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={24} name="神性" graspCondition="激活另一横排或纵列的全部 5 张牌。">
+    <div slot="describe">
+        > 通常来说，神明的伟力乃是先天的恩赐；但在极少数情况下，神性亦可以后天赢得。
+
+    </div>
+    <div slot="effect">祝福有 +10% / +15% / +20% / +25% 的概率提升至史诗。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={45}/>，<InlineLabel key="goldenApple" num={1}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={2}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={4}/>，<InlineLabel key="voidLens" num={1}/>
+    </div>
+</ArcanaCard>
+
+<ArcanaCard index={25} name="审判" graspCondition="激活的牌的数量不超过 3 张。">
+    <div slot="describe">
+        > 每个凡人死后的去向，尽归冥界之主定夺。
+
+    </div>
+    <div slot="effect">每击败一个区域守卫，随机激活 3 / 4 / 5 / 6 张未激活的阿卡那牌。</div>
+
+    <div slot="unlock">
+        <InlineLabel key="ashes" num={50}/>，<InlineLabel key="feather" num={1}/>
+    </div>
+    <div slot="lv2">
+        <InlineLabel key="moonDust" num={10}/>
+    </div>
+    <div slot="lv3">
+        <InlineLabel key="moonDust" num={20}/>，<InlineLabel key="voidLens" num={2}/>
+    </div>
+</ArcanaCard>

@@ -68,7 +68,7 @@ export default {
                         { label: '刻耳柏洛斯', slug: 'characters/cerberus', attrs: { 'data-icon': `${hadesSourceHost}/cerberus_icon.png` } },
                         { label: '提丰', slug: 'characters/typhon', attrs: { 'data-icon': `${hadesSourceHost}/typhon_icon.png` } },
                         { label: '普罗米修斯', slug: 'characters/prometheus', attrs: { 'data-icon': `${hadesSourceHost}/prometheus_icon.png` } },
-                        { label: '赫拉克勒斯', slug: 'characters/heracles', attrs: { 'data-icon': `${hadesSourceHost}/heracles_icon.png` } },
+                        { label: '膂力盖世 - 赫拉克勒斯', slug: 'characters/heracles', attrs: { 'data-icon': `${hadesSourceHost}/heracles_icon.png` } },
                         { label: '纷争化身 - 厄里斯', slug: 'characters/eris', attrs: { 'data-icon': `${hadesSourceHost}/eris_icon.png` } },
                         { label: '声名败坏的独眼巨人 - 波吕斐摩斯', slug: 'characters/polyphemus', attrs: { 'data-icon': `${hadesSourceHost}/polyphemus_icon.png` } },
                         { label: '斯库拉', slug: 'characters/scylla', attrs: { 'data-icon': `${hadesSourceHost}/scylla_icon.png` } },
@@ -144,6 +144,10 @@ export default {
                     attrs: { 'data-icon': `${hadesSourceHost}/tools/FishingRod.webp` }
                 },
             ]
+        },
+        {
+            label: '阿卡那牌',
+            slug: 'cards'
         },
         {
             label: '信物',

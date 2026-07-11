@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets";
+import globalConfigs from "../../configs/globalConfigs.mjs"
+import InlineLabel from "./InlineLabel.astro"
+
+const {
+    index,
+    name,
+    grasp,
+    graspCondition
+} = Astro.props
+
+
+function convertToRoman(num) {
+    const romanMatrix = [
+        [1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'],
+        [100, 'C'],  [90, 'XC'],  [50, 'L'],  [40, 'XL'],
+        [10, 'X'],   [9, 'IX'],   [5, 'V'],   [4, 'IV'], [1, 'I']
+    ];
+    
+    if (num <= 0 || num > 3999) return ''; // 边界处理
+    
+    let result = '';
+    for (const [value, letter] of romanMatrix) {
+        while (num >= value) {
+            result += letter;
+            num -= value;
+        }
+    }
+    return result;
+}
+
+async function renderName() {
+    return convertToRoman(index) + ' ' + name
+}
+---
+
+<div class="arcana-card-row">
+    <Image
+        class="card-img"
+        width={130}
+        height={206}
+        alt={'arcana' + index}
+        src={globalConfigs.hadesSourceHost + '/cards/' + index + '.webp' }
+    />
+    <div class="infos">
+        <div class="info-item name">
+            <h4 set:html={renderName()}></h4>
+        </div>
+        
+        <div class="info-item grasp">
+            {grasp ? <InlineLabel key="grasp" num={grasp}/> : <span class="arcana-condition">觉醒：{graspCondition}</span> }
+        </div>
+        <div class="info-item describe">
+            <slot name="describe"></slot>
+        </div>
+        <div class="info-item effect">
+            <div class="info-value">
+                <slot name="effect"></slot>
+            </div>
+        </div>
+        <div class="info-item unlock">
+            <div class="info-label">解锁</div>
+            <div class="info-value">
+                <slot name="unlock"></slot>
+            </div>
+        </div>
+        <div class="info-item unlock">
+            <div class="info-label">启迪 - 等级2</div>
+            <div class="info-value">
+                <slot name="lv2"></slot>
+            </div>
+        </div>
+        <div class="info-item unlock">
+            <div class="info-label">启迪 - 等级3</div>
+            <div class="info-value">
+                <slot name="lv3"></slot>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+.arcana-card-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    /* 1. 先把原生的边框干掉 */
+    border: none; 
+
+    background-image: linear-gradient(to right, #ccc 30%, rgba(255, 255, 255, 0) 0%);
+    
+    background-repeat: repeat-x; 
+    background-position: bottom;
+
+    /* 调整这个尺寸来控制间隔！
+        10px 代表：一个圆点 + 一个间距 的总宽度。
+        2px 代表：这条边框的高度（粗细）。
+    */
+    background-size: 7px 2px;
+    
+    .card-img {
+        width: 130px;
+        height: 206px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .infos {
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+        margin-top: 0;
+
+        .info-item {
+            &.name {
+                font-size: 2em;
+                font-weight: 800;
+            }
+            .info-label {
+                font-weight: 800;
+            }
+            .info-value {}
+            .arcana-condition {
+                background-color: #f4f5f8;
+                border-radius: 5px;
+                padding: 4px 5px;
+                margin: 0 4px;
+                font-size: small;
+            }
+        }
+    }
+}
+</style>
