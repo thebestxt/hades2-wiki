@@ -32,6 +32,7 @@ const keyMap = {
     plasma: { label: '混沌质', icon: '/reagens/Plasma.webp', },
     darkness: { label: '黑暗', icon: '/reagens/Darkness.webp', },
     voidLens: { label: '虚空之眼', icon: '/reagens/Void_Lens.webp', },
+    bones: { label: '骨骇', icon: '/reagens/bones.webp', },
 
     // 植物
     lotus: { label: '莲花', icon: '/plants/Lotus.webp', },
@@ -41,6 +42,8 @@ const keyMap = {
     nightshade: { label: '颠茄', icon: '/plants/Nightshade.webp', },
     poppy: { label: '罂粟', icon: '/plants/Poppy.webp', },
     moss: { label: '青苔', icon: '/plants/Moss.webp', },
+    mysterySeeds: { label: '神秘种子', icon: '/plants/Mystery_Seeds.webp', },
+    olive: { label: '橄榄', icon: '/plants/Olive.webp', },
 
     // 祝福
     premiumService: { label: '尊享服务', icon: '/boons/Premium_Service.webp', },
@@ -51,6 +54,14 @@ const keyMap = {
     magick: { label: '魔力值', icon: '/values/Magick.webp', },
     obolPoint: { label: '信用点', icon: '/values/obol_point.png', },
     
+    // 元素
+    air: { label: '风元素', icon: '/values/Air.webp', },
+    fire: { label: '火元素', icon: '/values/Fire.webp', },
+    earth: { label: '土元素', icon: '/values/Earth.webp', },
+    water: { label: '水元素', icon: '/values/Water.webp', },
+
+    // 咒语
+    darkTool: { label: '咒语：暗夜工具' },
 }
 
 const getMapItem = () => {
@@ -72,7 +83,7 @@ const getMapItemParam = (k: string, dft: string) => {
 ---
 
 <span class="inline-label-container" {...attrs}>
-    <R2Image class="inline-label-image" src={getMapItemParam('icon', src)}/>
+    { getMapItemParam('icon', src) ? <R2Image class="inline-label-image" src={getMapItemParam('icon', src)}/> : ''}
     <span class="inline-label-text">{ getMapItemParam('label', content) }</span>
     { num !== null ? <span class="inline-label-text">x{ num !== null ? num : '' }</span> : '' }
 </span>

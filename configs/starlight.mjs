@@ -175,5 +175,13 @@ export default {
                 },
             ]
         },
+        {
+            label: '咒语',
+            slug: 'spells'
+        },
+        {
+            label: '预言',
+            slug: 'prophecy'
+        },
     ],
 }
