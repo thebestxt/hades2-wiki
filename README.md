@@ -1,49 +1,16 @@
-# Starlight Starter Kit: Basics
+# 哈迪斯2 中文wiki
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+这是我的个人项目，使用 `Astro` 搭建，目前部署在 Cloudflare 上。使用 Cloudflare Pages 进行部署，图片存储在 Cloudflare R2 上。后面有计划做小程序 / App，迁移到国内的网络上。
 
-```
-pnpm create astro@latest -- --template starlight
-```
+如果要参与，可以 fork 仓库，修改后提 PR，我会仔细查看的。
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 计划
 
-## 🚀 Project Structure
+### Alpha
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
++ 完善内容
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
+### 迁移到中文互联网
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
++ 开发小程序 / App
++ 存储转移
