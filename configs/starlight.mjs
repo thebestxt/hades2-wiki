@@ -21,6 +21,10 @@ export default {
             items: []
         },
         {
+            label: '基础概念',
+            slug: 'base'
+        },
+        {
             label: '角色',
             items: [
                 {
