@@ -2,7 +2,12 @@
 // R2Image.astro
 import globalConfig from '../../configs/globalConfigs.mjs'
 
-const { src = "", ...attrs } = Astro.props
+const {
+  src = "",
+  size = 'medium',
+  sizeNum = null,
+  ...attrs
+} = Astro.props
 
 // 🌟 核心：清理 src 开头的斜杠，防止拼接出双斜杠
 const cleanSrc = src.startsWith('/') ? src.slice(1) : src;
@@ -14,6 +19,48 @@ const isDev = import.meta.env.DEV;
 const finalSrc = isDev 
   ? `/r2Sources/${cleanSrc}` 
   : `${globalConfig.hadesSourceHost}/${cleanSrc}`;
+
+const classArr = [
+  'r2-image',
+  size
+]
+const style = [
+  sizeNum !== null ? `width: ${sizeNum}px; height: ${sizeNum}px;` : ''
+]
 ---
 
-<img style="display: inline-block;" src={finalSrc} alt="" {...attrs}>
+<img
+  class={classArr.join(' ')}
+  style={style.join(' ')}
+  src={finalSrc}
+  alt="" {...attrs}>
+
+<style lang="scss">
+  .r2-image {
+    display: inline-block;
+    &.mini {
+      width: 22px;
+      height: 22px;
+    }
+    &.small {
+      width: 50px;
+      height: 50px;
+    }
+    &.medium {
+      width: 75px;
+      height: 75px;
+    }
+    &.large {
+      width: 100px;
+      height: 100px;
+    }
+    &.xl {
+      width: 130px;
+      height: 130px;
+    }
+    &.xxl {
+      width: 170px;
+      height: 170px;
+    }
+  }
+</style>

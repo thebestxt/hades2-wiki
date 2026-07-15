@@ -33,12 +33,21 @@ export default {
     driftwood: { label: '浮木', icon: '/plants/Driftwood.webp', },
     goldenApple: { label: '金苹果', icon: '/plants/Golden_Apple.webp', },
     nightshade: { label: '颠茄', icon: '/plants/Nightshade.webp', },
+    nightshadeSeeds: { label: '颠茄种子', icon: '/plants/Nightshade_Seeds.webp', },
     poppy: { label: '罂粟', icon: '/plants/Poppy.webp', },
     moss: { label: '青苔', icon: '/plants/Moss.webp', },
     mysterySeeds: { label: '神秘种子', icon: '/plants/Mystery_Seeds.webp', },
     olive: { label: '橄榄', icon: '/plants/Olive.webp', },
     moly: { label: '摩吕草', icon: '/plants/Moly.webp', },
     thalamus: { label: '混沌苞蕾', icon: '/plants/Thalamus.webp', },
+    cattailSeeds: { label: '香蒲种子', icon: '/plants/Cattail_Seeds.webp', },
+    wheatSeeds: { label: '小麦种子', icon: '/plants/Wheat_Seeds.webp', },
+    poppySeeds: { label: '罂粟种子', icon: '/plants/Poppy_Seeds.webp', },
+    garlicCloves: { label: '蒜瓣', icon: '/plants/Garlic_Cloves.webp', },
+    mandrakeSeeds: { label: '曼德拉草种子', icon: '/plants/Mandrake_Seeds.webp', },
+    oliveBranch: { label: '橄榄枝', icon: '/plants/Olive_Branch.webp', },
+    plankton: { label: '浮游植物', icon: '/plants/Plankton.webp', },
+    originSeeds: { label: '原初种子', icon: '/plants/Origin_Seeds.webp', },
     
     // 工具
     fishingRod: { label: '钓鱼竿', icon: '/tools/FishingRod.webp', },
@@ -89,7 +98,9 @@ export default {
     chaos: { label: '卡俄斯', icon: 'chaos_icon.png'  },
     
     // 祝福
-    premiumService: { label: '尊享服务', icon: '/boons/Premium_Service.webp', },
+    premiumService: { label: '尊享服务', icon: '/blessing/hephaestus/Premium_Service.webp', },
+    plentifulForage: { label: '生机盎然', icon: '/blessing/demeter/Plentiful_Forage.webp', },
+    mixedBlessings: { label: '繁多的祝福', icon: '/blessing/narcissus/Mixed_Blessings.webp', },
 
     // 礼物
     nectar: { label: '蜜露', icon: '/goods/Nectar.webp', },
@@ -107,6 +118,7 @@ export default {
     changeOfFate: { label: '重塑命运', icon: '/values/Change_of_Fate.webp', },
     gold: { label: '金币', icon: '/values/Gold.webp', },
     daedalusHammer: { label: '狄德勒斯之锤', icon: '/values/Daedalus_Hammer.webp', },
+    whiles: { label: '', icon: '/values/Whiles.webp', },
     
     // 元素
     air: { label: '风元素', icon: '/values/Air.webp', },
@@ -124,4 +136,8 @@ export default {
     hecuba: { label: '赫库芭', icon: '/friends/Hecuba.webp' },
     raki: { label: '拉奇', icon: '/friends/Raki.webp' },
     toula: { label: '图拉', icon: '/friends/Toula.webp' },
+    
+    // 工具
+    shovel: { label: '银辉铲', icon: '/tools/Shovel.webp' },
+
 }

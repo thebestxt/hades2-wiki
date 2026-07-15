@@ -5,6 +5,8 @@ const {
     src = "",
     content = "",
     num = null,
+    level = 0,
+    leftNum = false,
     ...attrs
 } = Astro.props
 
@@ -26,12 +28,15 @@ const getMapItemParam = (k: string, dft: string) => {
         return dft
     }
 }
+
+let labelClassArr = ['inline-label-text', `level-${level}`]
 ---
 
 <span class="inline-label-container" {...attrs}>
-    { getMapItemParam('icon', src) ? <R2Image class="inline-label-image" src={getMapItemParam('icon', src)}/> : ''}
-    <span class="inline-label-text">{ getMapItemParam('label', content) }</span>
-    { num !== null ? <span class="inline-label-text">x{ num !== null ? num : '' }</span> : '' }
+    { leftNum ? (num !== null ? <span class="inline-label-text">{ num !== null ? num : '' }</span> : '') : '' }
+    { getMapItemParam('icon', src) ? <R2Image class="inline-label-image" size="mini" src={getMapItemParam('icon', src)}/> : ''}
+    <span class={labelClassArr.join(' ')}>{ getMapItemParam('label', content) }</span>
+    { !leftNum ? (num !== null ? <span class="inline-label-text">x{ num !== null ? num : '' }</span> : '') : '' }
 </span>
 <style lang="scss">
     .inline-label-container {
@@ -52,6 +57,18 @@ const getMapItemParam = (k: string, dft: string) => {
         .inline-label-text {
             font-size: small;
             margin-left: 5px;
+            &.level-1 {
+                color: #717171;
+            }
+            &.level-2 {
+                color: #0080fa;
+            }
+            &.level-3 {
+                color: #911df9;
+            }
+            &.level-4 {
+                color: #f75550;
+            }
         }
     }
 </style>
