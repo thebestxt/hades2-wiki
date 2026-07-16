@@ -115,6 +115,7 @@ export default {
     deathDefiance: { label: '死里逃生', icon: '/values/Death_Defiance.webp', },
     changeOfFate: { label: '重塑命运', icon: '/values/Change_of_Fate.webp', },
     gold: { label: '金币', icon: '/values/Gold.webp', },
+    price: { label: '', icon: '/values/Gold.webp', },
     daedalusHammer: { label: '狄德勒斯之锤', icon: '/values/Daedalus_Hammer.webp', },
     whiles: { label: '', icon: '/values/Whiles.webp', },
     
@@ -127,6 +128,7 @@ export default {
     // 咒语
     darkTool: { label: '咒语：暗夜工具' },
     myFriends: { label: '咒语：魔宠信赖' },
+    groundMoney: { label: '咒语：大地之财', icon: '' },
 
     // 魔宠
     frinos: { label: '弗利诺斯', icon: '/friends/Frinos.webp' },
@@ -145,6 +147,10 @@ export default {
     makeShadow: { label: '炼金：暗影', icon: '' },
     makeMoon1: { label: '炼金：出影皎月', icon: '' },
     makeMoon2: { label: '炼金：繁星映月', icon: '' },
+    sweetNectar: { label: '炼金：甜美蜜露', icon: '' },
+    makeWitcDelight: { label: '炼金：女巫之宝', icon: '' },
+    returnBorn: { label: '炼金：灵体还阳', icon: '' },
+    bigAwake: { label: '炼金：大梦初醒', icon: '' },
 
     // 其它
     darkTask: { label: '匿踪者之誓 - 忠誓任务', icon: '' },

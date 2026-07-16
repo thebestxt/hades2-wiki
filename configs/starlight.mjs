@@ -51,16 +51,25 @@ export default {
             items: gift
         },
         {
+            label: '道具',
+            items: [
+                {
+                    label: '作物',
+                    slug: 'plants'
+                },
+                {
+                    label: '炼金材料',
+                    slug: 'material'
+                },
+                {
+                    label: '礼物',
+                    slug: 'goods'
+                }
+            ]
+        },
+        {
             label: '魔宠',
             items: friends
-        },
-        {
-            label: '作物',
-            slug: 'plants'
-        },
-        {
-            label: '材料',
-            slug: 'material'
         },
         {
             label: '咒语',
