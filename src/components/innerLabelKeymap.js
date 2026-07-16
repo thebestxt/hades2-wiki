@@ -26,6 +26,7 @@ export default {
     bones: { label: '骨骇', icon: '/reagens/bones.webp', },
     starDust: { label: '星尘', icon: '/reagens/Star_Dust.webp', },
     zodiacSand: { label: '星尘', icon: '/reagens/Zodiac_Sand.webp', },
+    rubbish: { label: '垃圾', icon: '/reagens/Rubbish.webp', },
 
     // 植物
     lotus: { label: '莲花', icon: '/plants/Lotus.webp', },
@@ -48,9 +49,6 @@ export default {
     oliveBranch: { label: '橄榄枝', icon: '/plants/Olive_Branch.webp', },
     plankton: { label: '浮游植物', icon: '/plants/Plankton.webp', },
     originSeeds: { label: '原初种子', icon: '/plants/Origin_Seeds.webp', },
-    
-    // 工具
-    fishingRod: { label: '钓鱼竿', icon: '/tools/FishingRod.webp', },
 
     // 人物
     hecate: { label: '赫卡忒', icon: 'hecate_icon.png'  },
@@ -139,5 +137,16 @@ export default {
     
     // 工具
     shovel: { label: '银辉铲', icon: '/tools/Shovel.webp' },
+    exorcismBook: { label: '安魂石板', icon: '/tools/ExorcismBook.webp' },
+    pickaxe: { label: '月牙镐', icon: '/tools/Pickaxe.webp' },
+    fishingRod: { label: '钓鱼竿', icon: '/tools/FishingRod.webp', },
+
+    // 炼金釜配方
+    makeShadow: { label: '炼金：暗影', icon: '' },
+    makeMoon1: { label: '炼金：出影皎月', icon: '' },
+    makeMoon2: { label: '炼金：繁星映月', icon: '' },
+
+    // 其它
+    darkTask: { label: '匿踪者之誓 - 忠誓任务', icon: '' },
 
 }

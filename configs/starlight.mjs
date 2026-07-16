@@ -59,6 +59,10 @@ export default {
             slug: 'plants'
         },
         {
+            label: '材料',
+            slug: 'material'
+        },
+        {
             label: '咒语',
             slug: 'spells'
         },
