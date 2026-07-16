@@ -47,6 +47,10 @@ export default {
             slug: 'cards'
         },
         {
+            label: '魔宠',
+            items: friends
+        },
+        {
             label: '信物',
             items: gift
         },
@@ -68,8 +72,13 @@ export default {
             ]
         },
         {
-            label: '魔宠',
-            items: friends
+            label: '商店',
+            items: [
+                { label: '卡戎之井', slug: 'shops/charon' },
+                { label: '黑商', slug: 'shops/charon' },
+                { label: '赫尔墨斯快递', slug: 'shops/charon' },
+                { label: '残魂商人', slug: 'shops/charon' },
+            ]
         },
         {
             label: '咒语',

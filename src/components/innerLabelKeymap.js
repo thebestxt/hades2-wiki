@@ -23,7 +23,7 @@ export default {
     plasma: { label: '混沌质', icon: '/reagens/Plasma.webp', },
     darkness: { label: '黑暗', icon: '/reagens/Darkness.webp', },
     voidLens: { label: '虚空之眼', icon: '/reagens/Void_Lens.webp', },
-    bones: { label: '骨骇', icon: '/reagens/bones.webp', },
+    bones: { label: '骨骇', icon: '/reagens/Bones.webp', },
     starDust: { label: '星尘', icon: '/reagens/Star_Dust.webp', },
     zodiacSand: { label: '星尘', icon: '/reagens/Zodiac_Sand.webp', },
     rubbish: { label: '垃圾', icon: '/reagens/Rubbish.webp', },
