@@ -27,7 +27,7 @@ export default [
             { label: '奥林匹斯之王 - 宙斯', slug: 'characters/zeus', attrs: { 'data-icon': `${hadesSourceHost}/zeus_icon.png` } },
             { label: '奥林匹斯王后 - 赫拉', slug: 'characters/hera', attrs: { 'data-icon': `${hadesSourceHost}/hera_icon.png` } },
             { label: '波塞冬', slug: 'characters/poseidon', attrs: { 'data-icon': `${hadesSourceHost}/poseidon_icon.png` } },
-            { label: '德墨忒尔', slug: 'characters/demeter', attrs: { 'data-icon': `${hadesSourceHost}/demeter_icon.png` } },
+            { label: '四季女神 - 德墨忒尔', slug: 'characters/demeter', attrs: { 'data-icon': `${hadesSourceHost}/demeter_icon.png` } },
             { label: '光明之神 - 阿波罗', slug: 'characters/apollo', attrs: { 'data-icon': `${hadesSourceHost}/apollo_icon.png` } },
             { label: '阿弗洛狄忒', slug: 'characters/aphrodite', attrs: { 'data-icon': `${hadesSourceHost}/aphrodite_icon.png` } },
             { label: '赫菲斯托斯', slug: 'characters/hephaestus', attrs: { 'data-icon': `${hadesSourceHost}/hephaestus_icon.png` } },
@@ -51,7 +51,7 @@ export default [
             { label: '纷争化身 - 厄里斯', slug: 'characters/eris', attrs: { 'data-icon': `${hadesSourceHost}/eris_icon.png` } },
             { label: '声名败坏的独眼巨人 - 波吕斐摩斯', slug: 'characters/polyphemus', attrs: { 'data-icon': `${hadesSourceHost}/polyphemus_icon.png` } },
             { label: '为害四海的灾祸 - 斯库拉', slug: 'characters/scylla', attrs: { 'data-icon': `${hadesSourceHost}/scylla_icon.png` } },
-            { label: '纳西索斯', slug: 'characters/narcissus', attrs: { 'data-icon': `${hadesSourceHost}/narcissus_icon.png` } },
+            { label: '水中仙 - 纳西索斯', slug: 'characters/narcissus', attrs: { 'data-icon': `${hadesSourceHost}/narcissus_icon.png` } },
             { label: '织匠 - 阿拉克捏', slug: 'characters/arachne', attrs: { 'data-icon': `${hadesSourceHost}/arachne_icon.png` } },
             { label: '修普诺斯', slug: 'characters/hypnos', attrs: { 'data-icon': `${hadesSourceHost}/hypnos_icon.png` } },
 
