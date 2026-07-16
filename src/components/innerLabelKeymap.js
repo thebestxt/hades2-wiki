@@ -155,4 +155,17 @@ export default {
     // 其它
     darkTask: { label: '匿踪者之誓 - 忠誓任务', icon: '' },
 
+    // Tag
+    funeng: { label: '赋能', icon: '', color:'#dc55e6', textColor: '#fff' },
+    legend: { label: '传奇', icon: '', color: '#fc8e28', textColor: '#fff' },
+    doubleHera: { label: '双重祝福 - 赫拉', icon: 'awardsIcon/Hera_reward.webp', color: '#71915a', textColor: '#fff' },
+    doublePoseidon: { label: '双重祝福 - 波塞冬', icon: 'awardsIcon/Poseidon_reward.webp', color: '#71915a', textColor: '#fff' },
+    doubleDemeter: { label: '双重祝福 - 德墨忒尔', icon: 'awardsIcon/Demeter_reward.webp', color: '#71915a', textColor: '#fff' },
+    doubleApollo: { label: '双重祝福 - 阿波罗', icon: 'awardsIcon/Apollo_reward.webp', color: '#71915a', textColor: '#fff' },
+    doubleAphrodite: { label: '双重祝福 - 阿弗洛狄忒', icon: 'awardsIcon/Aphrodite_reward.webp', color: '#71915a', textColor: '#fff' },
+    doubleHestia: { label: '双重祝福 - 赫斯提亚', icon: 'awardsIcon/Hestia_reward.webp', color: '#71915a', textColor: '#fff' },
+    doubleHephaestus: { label: '双重祝福 - 赫菲斯托斯', icon: 'awardsIcon/Hephaestus_reward.webp', color: '#71915a', textColor: '#fff' },
+    doubleAres: { label: '双重祝福 - 阿瑞斯', icon: 'awardsIcon/Ares_reward.webp', color: '#71915a', textColor: '#fff' },
+    doubleSelene: { label: '双重祝福 - 塞勒涅', icon: 'awardsIcon/Selene_reward.webp', color: '#71915a', textColor: '#fff' },
+
 }

@@ -1,0 +1,46 @@
+---
+import R2Image from './R2Image.astro'
+const {
+    content = "",
+    color = "",
+    ...attrs
+} = Astro.props
+
+---
+
+<span class="inline-label-container" style={ `background-color: ${color};` } {...attrs}>
+    { content }
+</span>
+<style lang="scss">
+    .inline-label-container {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        vertical-align: middle;
+        border-radius: 5px;
+        padding: 2px 5px;
+        margin: 0 4px;
+        gap: 4px;
+        .inline-label-image {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+        .inline-label-text {
+            font-size: small;
+            margin-left: 5px;
+            &.level-1 {
+                color: #717171;
+            }
+            &.level-2 {
+                color: #0080fa;
+            }
+            &.level-3 {
+                color: #911df9;
+            }
+            &.level-4 {
+                color: #f75550;
+            }
+        }
+    }
+</style>

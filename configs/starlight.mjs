@@ -5,6 +5,7 @@ import weapon from "./sidebar/weapon"
 import tools from './sidebar/tools'
 import gift from "./sidebar/gift"
 import friends from "./sidebar/friends"
+import wishes from "./sidebar/wishes"
 
 export default {
     title: '哈迪斯 II',
@@ -33,6 +34,10 @@ export default {
         {
             label: '角色',
             items: charecter
+        },
+        {
+            label: '祝福',
+            items: wishes
         },
         {
             label: '暗夜武器',

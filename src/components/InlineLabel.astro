@@ -7,6 +7,8 @@ const {
     num = null,
     level = 0,
     leftNum = false,
+    color = 'var(--sl-color-hairline)',
+    textColor = '#353841',
     ...attrs
 } = Astro.props
 
@@ -32,19 +34,19 @@ const getMapItemParam = (k: string, dft: string) => {
 let labelClassArr = ['inline-label-text', `level-${level}`]
 ---
 
-<span class="inline-label-container" {...attrs}>
+<span class="inline-label-container" style={`background-color: ${getMapItemParam('color', color)}; color: ${getMapItemParam('textColor', textColor)};`} {...attrs}>
     { leftNum ? (num !== null ? <span class="inline-label-text">{ num !== null ? num : '' }</span> : '') : '' }
     { getMapItemParam('icon', src) ? <R2Image class="inline-label-image" size="mini" src={getMapItemParam('icon', src)}/> : ''}
     <span class={labelClassArr.join(' ')}>{ getMapItemParam('label', content) }</span>
     { !leftNum ? (num !== null ? <span class="inline-label-text">x{ num !== null ? num : '' }</span> : '') : '' }
 </span>
-<style lang="scss">
+<style lang="scss" define:vars={{ textMarginLeft: getMapItemParam('icon', src) ? '5px' : '0' }}>
     .inline-label-container {
         display: inline-flex;
         flex-direction: row;
         align-items: center;
         vertical-align: middle;
-        background-color: var(--sl-color-hairline);
+        // background-color: var(--sl-color-hairline);
         border-radius: 5px;
         padding: 2px 5px;
         margin: 0 4px;
@@ -56,7 +58,7 @@ let labelClassArr = ['inline-label-text', `level-${level}`]
         }
         .inline-label-text {
             font-size: small;
-            margin-left: 5px;
+            margin-left: var(--textMarginLeft);
             &.level-1 {
                 color: #717171;
             }

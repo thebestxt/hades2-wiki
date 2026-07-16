@@ -1,0 +1,230 @@
+---
+title: 宙斯
+pubDate: 2026-07-17 01:00:25
+---
+
+<R2Image src="/zeus_big.png" sizeNum={300}/>
+
+奥林匹斯之王，天空和雷电之神。
+
+## 普通祝福
+
+### <R2Image src="/blessing/zeus/Heaven_Strike.webp" /> 雷霆打击 <R2Image src="/elements/Air.webp" size="mini" />
+
+你的攻击施加霹雳。
+
++ 霹雳伤害：<LevelNums levels={[ 80, 120, 160, 200 ]} />
+
+### <R2Image src="/blessing/zeus/Heaven_Flourish.webp" /> 雷霆绝技 <R2Image src="/elements/Air.webp" size="mini" />
+
+你的特技施加霹雳。
+
++ 霹雳伤害：<LevelNums levels={[ 100, 130, 160, 190 ]} />
+
+### <R2Image src="/blessing/zeus/Storm_Ring.webp" /> 风暴之环 <R2Image src="/elements/Air.webp" size="mini" />
+
+你的法阵会召来天雷反复轰击内部，每次击中 1 个敌人。
+
++ 天雷伤害：<LevelNums levels={[ 25, 30, 35, 40 ]} /> 每 0.35 秒
+
+### <R2Image src="/blessing/zeus/Thunder_Rush.webp" /> 电掣奔行 <R2Image src="/elements/Air.webp" size="mini" />
+
+你的冲刺会令附近的敌人收到天雷轰击。
+
++ 天雷伤害：<LevelNums levels={[ 20, 25, 30, 35 ]} />
+
+### <R2Image src="/blessing/zeus/Ionic_Gain.webp" /> 离子汇流 <R2Image src="/elements/Air.webp" size="mini" />
+
+在每场遭遇战开始时会出现一个以太之源，使用时可以恢复全部 <InlineLabel key="magick" />。
+
++ 重新出现时间：<LevelNums levels={[ 10, 9, 8, 7 ]} />
+
+### <R2Image src="/blessing/zeus/Power_Surge.webp" /> 叱咤风云 <R2Image src="/elements/Air.webp" size="mini" />
+
+每当你使用 <InlineLabel key="magick" />，随机一个敌人会收到天雷轰击。
+
++ 天雷伤害：<LevelNums levels={[ 20, 30, 40, 50 ]} />
+
+### <R2Image src="/blessing/zeus/Divine_Vengeance.webp" /> 神圣复仇 <R2Image src="/elements/Air.webp" size="mini" />
+
+受到伤害后以天雷还击，且有 50% 概率额外还击一次。
+
++ 天雷伤害：100，至多 <LevelNums levels={[ 2, 3, 4, 5 ]} /> 次
+
+### <R2Image src="/blessing/zeus/Lightning_Lance.webp" /> 闪电标枪 <R2Image src="/elements/Air.webp" size="mini" />
+
+长按基础法阵瞄准并选择法阵出现的区域。区域内的敌人将受到天雷轰击。
+
++ 天雷伤害：<LevelNums levels={[ 50, 70, 90, 100 ]} />
+
+### <R2Image src="/blessing/zeus/Static_Shock.webp" /> 静电震颤 <R2Image src="/elements/Air.webp" size="mini" />
+
+你的武器会射出连环闪电，可以弹射 4 次，但需要蓄锐 <InlineLabel key="magick" leftNum={true} num={50} />。
+
++ 连环闪电伤害：<LevelNums levels={[ 10, 15, 20, 25 ]} />
+
+### <R2Image src="/blessing/zeus/Double_Strike.webp" /> 双重雷击 <R2Image src="/elements/Air.webp" size="mini" />
+
+天雷效果有概率轰击 2 次。
+
++ 额外天雷概率：<LevelNums levels={[ '10%', '15%', '20%', '25%' ]} />
+
++ 前置条件：下列任一
+    + 雷霆打击
+    + 雷霆绝技
+    + 风暴之环
+    + 电掣奔行
+    + 叱咤风云
+    + 神圣复仇
+    + 闪电标枪
+
+
+### <R2Image src="/blessing/zeus/Arc_Flash.webp" /> 电光石火 <R2Image src="/elements/Air.webp" size="mini" />
+
+你的 Ω 招式的伤害会立刻触发霹雳，且使其造成更高伤害。
+
++ Ω 霹雳伤害加成：<LevelNums levels={[ '30%', '40%', '50%', '60%' ]} />
+
++ 前置条件：下列任一
+    + 雷霆打击
+    + 雷霆绝技
+
+### <R2Image src="/blessing/zeus/Electric_Overload.webp" /> 电流过载 <R2Image src="/elements/Air.webp" size="mini" />
+
+你的连环闪电效果造成更高伤害，且可以额外弹射 3 次。
+
++ 闪电伤害：<LevelNums levels={[ '+20%', '+30%', '+40%', '+50%' ]} />
+
++ 前置条件：拥有静电震颤
+
+## 特殊祝福
+
+### <R2Image src="/blessing/zeus/Air_Quality.webp" /> 霹雳如雷 <InlineLabel key="funeng" />
+
+如果你至少拥有 5 个 <InlineLabel key="air" /> 系祝福，你每次造成的伤害均不会低于下限。
+
++ 每次造成的伤害下限：50
+
++ 前置条件： <InlineLabel key="air" num={3} />
+
+### <R2Image src="/blessing/zeus/Shocking_Loss.webp" /> 五雷轰顶 <InlineLabel key="legend" />
+
+大部分敌人首次受到你的伤害时，有概率直接被消灭。
+
++ 消灭概率：25%
+
++ 会影响大多数敌人，但不包括区域守卫和类似区域守卫的敌人，例如「糟糕」。
+
++ 9999 伤害只是用来显示，并不会触发诅咒状态，也不会计入胜利界面的总伤害值。
+
++ 前置条件：下列任一
+    + 雷霆打击、雷霆绝技、风暴之环、电掣奔行、离子汇流
+    + 静电震颤、叱咤风云、闪电标枪、神圣复仇
+    + 电光石火、双重雷击、电流过载
+
+## 双重祝福
+
+### <R2Image src="/blessing/zeus/Kings_Ransom.webp" /> 弃后保王 <InlineLabel key="doubleHera" />
+
+放弃你所有的赫拉祝福。每放弃 1 个，便提升你所有宙斯祝福的等级。
+
++ 只会在获取宙斯祝福时触发。
+
++ 放弃每个赫拉祝福，每个宙斯祝福等级提升 4。
+
++ 前置条件：以下两组，每组至少有 1 个
+    + 雷霆打击、雷霆绝技、风暴之环、电掣奔行、离子汇流
+    + 羁绊之环、祖荫汇流、结缘奔行
+
+### <R2Image src="/blessing/zeus/Killer_Current.webp" /> 湍流激电 <InlineLabel key="doublePoseidon" />
+
+你的天雷和连环闪电对受激荡影响的敌人造成更高伤害。
+
++ 天雷和连环闪电额外伤害：30%。
+
++ 前置条件：以下两组，每组至少有 1 个
+    + 下列一项：潮汐之环，落花流水
+    + 下列一项：雷霆打击、雷霆绝技、风暴之环、电掣奔行、神圣复仇、闪电标枪
+
+### <R2Image src="/blessing/zeus/Hail_Storm.webp" /> 冰雹风暴 <InlineLabel key="doubleDemeter" />
+
+你的冰封效果还会召来天雷，反复轰击无法行动的敌人。
+
++ 天雷伤害：30 每 0.5 秒。
+
++ 前置条件：以下两组，每组至少有 1 个
+    + 雷霆打击、雷霆绝技、风暴之环、电掣奔行、离子汇流
+    + 冰霜打击、冰霜绝技、冰雪之环
+
+
+### <R2Image src="/blessing/zeus/Glorious_Disaster.webp" /> 辉耀天灾 <InlineLabel key="doubleApollo" />
+
+你可以向你的 Ω 法阵额外引导 +30 <InlineLabel key="magick" />，令敌人反复受到天雷轰击。
+
++ 天雷伤害：20 毎 0.13 秒
+
++ 前置条件
+    + 夺目闪光
+    + 任一：雷霆打击、雷霆绝技、风暴之环、电掣奔行
+
+### <R2Image src="/blessing/zeus/Romantic_Spark.webp" /> 浪漫火花 <InlineLabel key="doubleAphrodite" />
+
+如果你奔跑撞向受霹雳影响的敌人，其效果会立即触发，且伤害更高。
+
++ 霹雳额外伤害：80%
+
++ 前置条件
+    + 任一：雷霆打击、雷霆绝技
+    + 任一：心动打击、心动绝技、沦陷之环、激情冲击、翩翩汇流
+
+### <R2Image src="/blessing/zeus/Thermal_Dynamics.webp" /> 天雷地火 <InlineLabel key="doubleHestia" />
+
+你的霹雳效果在造成伤害时还会施加灼烧。
+
++ 灼烧伤害：160
+
++ 前置条件
+    + 任一：雷霆打击、雷霆绝技
+    + 任一：烈焰打击、烈焰绝技、炙烤之环
+
+### <R2Image src="/blessing/zeus/Master_Conductor.webp" /> 电流主宰 <InlineLabel key="doubleHephaestus" />
+
+你的连环闪电可以借助你自己弹射，且每次弹射后造成更高的伤害。
+
++ 每次弹射额外伤害:+15%
+
++ 前置条件
+    + 静电震颤
+    + 任一：火山打击、火山绝技、轰鸣之环、烙印冲击、锤炼汇流
+
+### <R2Image src="/blessing/zeus/Heinous_Affront.webp" /> 赶尽杀绝 <InlineLabel key="doubleAres" />
+
+施加创伤时还可以施加你所有的“受到伤害后”效果。
+
++ 对每个敌人触发时间间隔：6秒
+
++ 前置条件
+    + 任一：凶恶打击、凶恶绝技
+    + 任一：雷霆打击、雷霆绝技、风暴之环、电掣奔行、离子汇流
+    + 任一：剖心置腹、耀眼惩戒、神圣复仇
+
+### <R2Image src="/blessing/zeus/Queens_Ransom.webp" /> 弃王保后 <InlineLabel key="doubleHera" />
+
+放弃你所有的宙斯祝福。每放弃一个，便提升你所有赫拉祝福的等级。
+
++ 这个双重祝福只会在获取赫拉祝福时触发
+
++ 放弃的每个宙斯祝福等级提升：4
+
++ 前置条件
+    + 任一：哲约打击、誓约绝技、羁绊之环、结缘奔行、祖荫汇流
+    + 任一：风暴之环、离子汇流、电掣奔行
+
+### <R2Image src="/blessing/zeus/Temper_of_Zeus.webp" /> 宙斯的雷霆 <InlineLabel key="doubleSelene" />
+
+你的巫咒可以获得神助：闪电反复在飞弹周围造成 80 伤害。
+
++ 前置条件
+    + 暮夜诅咒
+    + 任一：任意宙斯的祝福、云纹手镯
+

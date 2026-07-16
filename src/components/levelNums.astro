@@ -1,0 +1,42 @@
+---
+const {
+    levels = [],
+    slashSynbol = '/'
+} = Astro.props
+---
+
+<div class="levelnums-container">
+    { levels.map((v: any, index: number) => {
+        const classList = ['level-span', `index-${index}`]
+        const isLast = index === levels.length - 1
+        return (
+            <span class={classList.join(' ')}>{ v }</span>
+            <span class="slash">{ isLast ? '' : ` ${slashSynbol} ` }</span>
+        )
+    }) }
+</div>
+
+<style lang="scss">
+.levelnums-container {
+    display: inline-block;
+    .level-span {
+        color: #585858;
+    }
+    .index-0 {
+        color: #585858;
+    }
+    .index-1 {
+        color: #0080fa;
+    }
+    .index-2 {
+        color: #911df9;
+    }
+    .index-3 {
+        color: #f75550;
+    }
+    .slash {
+        color: #585858;
+    }
+
+}
+</style>
