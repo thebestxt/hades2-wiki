@@ -99,6 +99,8 @@ export default {
     premiumService: { label: '尊享服务', icon: '/blessing/hephaestus/Premium_Service.webp', },
     plentifulForage: { label: '生机盎然', icon: '/blessing/demeter/Plentiful_Forage.webp', },
     mixedBlessings: { label: '繁多的祝福', icon: '/blessing/narcissus/Mixed_Blessings.webp', },
+    fineLine: { label: '泾渭分明', icon: '/blessing/hera/Fine_Line.webp', },
+    oceanSwell: { label: '翻江倒海', icon: '/blessing/poseidon/Ocean_Swell.webp', },
 
     // 礼物
     nectar: { label: '蜜露', icon: '/goods/Nectar.webp', },
@@ -118,6 +120,7 @@ export default {
     price: { label: '', icon: '/values/Gold.webp', },
     daedalusHammer: { label: '狄德勒斯之锤', icon: '/values/Daedalus_Hammer.webp', },
     whiles: { label: '', icon: '/values/Whiles.webp', },
+    bloodDrop: { label: '血浆', icon: '/values/BloodDrop.png', },
     
     // 元素
     air: { label: '风元素', icon: '/values/Air.webp', },
@@ -158,6 +161,7 @@ export default {
     // Tag
     funeng: { label: '赋能', icon: '', color:'#dc55e6', textColor: '#fff' },
     legend: { label: '传奇', icon: '', color: '#fc8e28', textColor: '#fff' },
+    doubleZeus: { label: '双重祝福 - 宙斯', icon: 'awardsIcon/Zeus_reward.webp', color: '#71915a', textColor: '#fff' },
     doubleHera: { label: '双重祝福 - 赫拉', icon: 'awardsIcon/Hera_reward.webp', color: '#71915a', textColor: '#fff' },
     doublePoseidon: { label: '双重祝福 - 波塞冬', icon: 'awardsIcon/Poseidon_reward.webp', color: '#71915a', textColor: '#fff' },
     doubleDemeter: { label: '双重祝福 - 德墨忒尔', icon: 'awardsIcon/Demeter_reward.webp', color: '#71915a', textColor: '#fff' },
