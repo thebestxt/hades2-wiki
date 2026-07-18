@@ -127,6 +127,7 @@ export default {
     fire: { label: '火元素', icon: '/values/Fire.webp', },
     earth: { label: '土元素', icon: '/values/Earth.webp', },
     water: { label: '水元素', icon: '/values/Water.webp', },
+    aether: { label: '以太', icon: '/values/Aether.png', },
 
     // 咒语
     darkTool: { label: '咒语：暗夜工具' },
