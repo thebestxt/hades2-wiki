@@ -1,0 +1,207 @@
+---
+title: 阿波罗
+pubDate: 2026-07-19 23:14:45
+---
+
+<R2Image src="/apollo_big.png" sizeNum={300}/>
+
+光明之神。阿尔忒弥斯的孪生弟弟。
+
+## 普通祝福
+
+### <R2Image src="/blessing/apollo/Nova_Strike.webp" /> 光耀打击 <R2Image src="/values/Air.webp" size="mini" />
+
+你的攻击在更大范围内造成更高伤害。
+
++ 攻击伤害 <LevelNums levels={[ '+40%', '+50%', '+60%', '+70%' ]} />
+
+### <R2Image src="/blessing/apollo/Nova_Flourish.webp" /> 光耀绝技 <R2Image src="/values/Air.webp" size="mini" />
+
+你的特技在更大范围内造成更高伤害。
+
++ 特技伤害 <LevelNums levels={[ '+60%', '+80%', '+100%', '+120%' ]} />
+
+### <R2Image src="/blessing/apollo/Prominence_Flare.webp" /> 烈日之环 <R2Image src="/values/Fire.webp" size="mini" />
+
+你的法阵会施加 <InlineTooltip key="daze" />，且在即将消散时造成爆发伤害。
+
++ 法阵伤害 <LevelNums levels={[ 80, 120, 160, 200 ]} />
+
+### <R2Image src="/blessing/apollo/Blinding_Rush.webp" /> 炫目奔行 <R2Image src="/values/Fire.webp" size="mini" />
+
+你的奔跑速度更快，且对附近的敌人施加 <InlineTooltip key="daze" />。
+
++ 奔跑速度 <LevelNums levels={[ '+15%', '+20%', '+25%', '+30%' ]} />
+
+### <R2Image src="/blessing/apollo/Lucid_Gain.webp" /> 明光汇流 <R2Image src="/values/Air.webp" size="mini" />
+
+如果你在法阵消散时身处其中，立即恢复一些 <InlineLabel key="magick" />。
+
++ 魔力值恢复 <LevelNums levels={[ 50, 75, 100, 125 ]} />
+
+### <R2Image src="/blessing/apollo/Light_Smite.webp" /> 耀眼惩戒 <R2Image src="/values/Fire.webp" size="mini" />
+
+受到伤害后自动对附近所有敌人造成伤害并施加 <InlineTooltip key="daze" />。
+
++ 复仇伤害 <LevelNums levels={[ 50, 75, 100, 125 ]} />
+
+### <R2Image src="/blessing/apollo/Perfect_Image.webp" /> 完美无瑕 <R2Image src="/values/Air.webp" size="mini" />
+
+你造成更高伤害，直到你受击为止。如果 15 秒未受伤，重新激活此效果。
+
++ 额外伤害 <LevelNums levels={[ '10%', '15%', '20%', '25%' ]} />
+
+### <R2Image src="/blessing/apollo/Dazzling_Display.webp" /> 应接不暇 <R2Image src="/values/Fire.webp" size="mini" />
+
+你的攻击有概率施加 <InlineTooltip key="daze" />。
+
++ 目眩概率 <LevelNums levels={[ '10%', '15%', '20%', '25%' ]} />
+
++ 前置条件：光耀打击
+
+### <R2Image src="/blessing/apollo/Back_Burner.webp" /> 如芒在背 <R2Image src="/values/Fire.webp" size="mini" />
+
+受到 <InlineTooltip key="daze" /> 影响的敌人被背刺时伤害提高。
+
++ 背刺伤害 <LevelNums levels={[ '+50%', '+75%', '+100%', '+125%' ]} />
+
++ 前置条件：下列任一
+    + 烈日之环、炫目奔行、耀眼惩戒、应接不暇
+
+### <R2Image src="/blessing/apollo/Prominence_Flare.webp" /> 夺目闪光 <R2Image src="/values/Fire.webp" size="mini" />
+
+你的 Ω 法阵消散后，在该区域频繁造成伤害，持续 2 秒。
+
+Ω 法阵伤害 <LevelNums levels={[ 10, 12, 14, 16 ]} />（毎 0.13 秒）
+
++ 前置条件：下列任一
+    + 沦陷之环、烈日之环、冰雪之环、轰鸣之环、羁绊之环、炙烤之环、潮汐之环、风暴之环、剑刃之环
+
+
+### <R2Image src="/blessing/apollo/Super_Nova.webp" /> 超级新星 <R2Image src="/values/Air.webp" size="mini" />
+
+你的法阵不断扩大，直到消散为止。
+
+法阵最大范围 <LevelNums levels={[ '+40%', '+50%', '+60%', '+70%' ]} />
+
+### <R2Image src="/blessing/apollo/Extra_Dose.webp" /> 梅开二度 <R2Image src="/values/Air.webp" size="mini" />
+
+你的基础攻击有概率命中 2 次。
+
++ 双重攻击概率 <LevelNums levels={[ '5%', '8%', '10%', '13%' ]} />
+
++ 前置条件：下列任一
+    + 心动打击、光耀打击、冰霜打击、火山打击、誓约打击、烈焰打击、浪潮打击、雷霆打击、凶恶打击
+
+## 特殊祝福
+
+### <R2Image src="/blessing/apollo/Self_Healing.webp" /> 赤诚如火 <InlineLabel key="funeng" />
+
+如果你至少拥有 3 个 <InlineLabel key="fire" /> 祝福，每当你受到伤害时，逐渐恢复一些 <InlineLabel key="health" />。
+
++ 伤害后恢复：30%（5 秒内）
+
++ 前置条件：<InlineLabel key="fire" num={2}/>
+
+### <R2Image src="/blessing/apollo/Prominence_Flare.webp" /> 才华横溢 <InlineLabel key="legend" /> <R2Image src="/values/Air.webp" size="mini" />
+
+你的 Ω 攻击和 Ω 特技会生效 2 次，但耗费更多 <InlineLabel key="magick" />。
+
++ Ω 招式消耗：<InlineLabel key="magick" leftNum num="+20" />。
+
++ 前置条件
+    + 任一：光耀打击、光耀绝技
+    + 任一：烈日之环、炫目奔行、明光汇流
+    + 任一：梅开二度、超级新星、如芒在背、夺目闪光
+
+## 双重祝福
+
+### <R2Image src="/blessing/zeus/Glorious_Disaster.webp" /> 辉耀天灾 <InlineLabel key="doubleZeus" /> <R2Image src="/values/Aether.png" size="mini" />
+
+你可以向你的 Ω 法阵额外引导 +30 <InlineLabel key="magick" />，令敌人反复受到天雷轰击。
+
++ 天雷伤害：20 （毎 0.13 秒）
+
++ 前置条件
+    + 夺目闪光
+    + 任一：雷霆打击、雷霆绝技、风暴之环、电掣奔行
+
+### <R2Image src="/blessing/hera/Sun_Worshiper.webp" /> 弃暗投明 <InlineLabel key="doubleHera" /> <R2Image src="/values/Aether.png" size="mini" />
+
+在每场遭遇战中，你所击杀的第一个敌人会复活为你而战。
+
++ 仆从伤害：+200%
+
++ 前置条件：
+    + 任一：羁绊之环、结缘奔行、祖荫汇流
+    + 任一：烈日之环、炫目奔行、明光汇流
+
+### <R2Image src="/blessing/poseidon/Beach_Ball.webp" /> 海滩飞球 <InlineLabel key="doublePoseidon" /> <R2Image src="/values/Aether.png" size="mini" />
+
+你的奔跑会在身后形成一个水球。在你停下后向前发射。
+
++ 最高爆炸伤害：300（2 秒后）
+
++ 前置条件
+    + 任一：光耀打击、光耀绝技、烈日之环、炫目奔行、明光汇流
+    + 任一：浪潮打击、浪潮绝技、潮汐之环、破浪奔行、洪水汇流
+    + 任一：炫目奔行、破浪奔行
+
+### <R2Image src="/blessing/demeter/Tropical_Cyclone.webp" /> 热带气旋 <InlineLabel key="doubleDemeter" /> <R2Image src="/values/Aether.png" size="mini" />
+
+当你站在 <InlineTooltip key="gust" /> 中时，每 0.3 秒向随机方向发射一道风刃。
+
++ 风刃伤害：70（毎 0.5 秒）
+
++ 前置条件
+    任一：光耀打击、光耀绝技、烈日之环、炫目奔行、明光汇流
+    任一：凛风奔行、极地之风
+
+### <R2Image src="/blessing/apollo/Sunny_Disposition.webp" /> 阳光心态 <InlineLabel key="doubleAphrodite" /> <R2Image src="/values/Aether.png" size="mini" />
+
+每当你创造 <InlineTooltip key="heartthrobs" /> 时，创造的数量增多。
+
++ 额外 <InlineTooltip key="heartthrobs" />：2
+
++ 前置条件
+    + 绝情碎心
+    + 任一：光耀打击、光耀绝技、烈日之环、炫目奔行、明光汇流
+
+### <R2Image src="/blessing/apollo/Warm_Breeze.webp" /> 暖风拂面 <InlineLabel key="doubleHestia" /> <R2Image src="/values/Aether.png" size="mini" />
+
+每当你闪避或 <InlineTooltip key="daze" /> 效果导致敌人失手时，恢复一些 <InlineLabel key="health" />。
+
++ 每次闪避恢复 <InlineLabel key="health" />：10
+
++ 前置条件
+    + 任一：烈日之环、炫目奔行、耀眼惩戒、应接不暇
+    + 任一：烈焰打击、烈焰绝技、炙烤之环、热力奔行、有氧汇流
+
+### <R2Image src="/blessing/apollo/Rude_Awakening.webp" /> 醒脑重锤 <InlineLabel key="doubleHephaestus" /> <R2Image src="/values/Aether.png" size="mini" />
+
+来自 <InlineLabel key="hephaestus" /> 的 <InlineTooltip key="blast" /> 效果会清除 <InlineTooltip key="daze" /> 效果，并在清除时造成更高伤害。
+
++ 额外 <InlineTooltip key="blast" /> 伤害：300
+
++ 前置条件
+    + 任一：火山打击、火山绝技、烙印奔行
+    + 任一：烈日之环、炫目奔行、耀眼惩戒、应接不暇
+
+### <R2Image src="/blessing/apollo/Cutting_Edge.webp" /> 剑芒如雨 <InlineLabel key="doubleAres" /> <R2Image src="/values/Aether.png" size="mini" />
+
+来自 <InlineLabel key="ares" /> 的下落利剑会额外落下 1 次，且在更大范围内造成伤害。
+
++ 利剑范围：+50%
++ 前置条件
+    + 任一：剑刃之环、锋刃奔行、倒悬之剑
+    + 任一：光耀打击、光耀绝技、烈日之环、炫目奔行、明光汇流
+
+### <R2Image src="/blessing/apollo/Shine_of_Apollo.webp" /> 阿波罗的光耀 <InlineLabel key="doubleSelene" /> <R2Image src="/values/Aether.png" size="mini" />
+
+你的巫咒可以获得神助：发射注入日光的射线，
+
++ 范围更大，且具有 +500 威力。
+
++ 前置条件
+    + 月光射线
+    + 任一：任意阿波罗的祝福、和煦光子

@@ -6,4 +6,5 @@ export default [
     { label: '赫拉', slug: 'wishes/hera', attrs: { 'data-icon': `${hadesSourceHost}/awardsIcon/Hera_reward.webp` } },
     { label: '波塞冬', slug: 'wishes/poseidon', attrs: { 'data-icon': `${hadesSourceHost}/awardsIcon/Poseidon_reward.webp` } },
     { label: '德墨忒尔', slug: 'wishes/demeter', attrs: { 'data-icon': `${hadesSourceHost}/awardsIcon/Demeter_reward.webp` } },
+    { label: '阿波罗', slug: 'wishes/apollo', attrs: { 'data-icon': `${hadesSourceHost}/awardsIcon/Apollo_reward.webp` } },
 ]
